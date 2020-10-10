@@ -1,0 +1,44 @@
+package software.leonov.common.util.function;
+
+import static software.leonov.common.util.function.Exceptions.uncheckedException;
+
+import java.util.Objects;
+import java.util.function.ToDoubleBiFunction;
+
+/**
+ * Mirror of the {@link ToDoubleBiFunction} interface whose {@code applyAsDouble(T, U)} method can throw a checked
+ * exception.
+ */
+@FunctionalInterface
+public interface CheckedToDoubleBiFunction<T, U> {
+
+    /**
+     * Applies this function to the given arguments.
+     *
+     * @param t the first function argument
+     * @param u the second function argument
+     * @return the function result
+     * @throws Exception if an error occurs
+     */
+    public double applyAsDouble(T t, U u) throws Exception;
+
+    /**
+     * Returns a {@link ToDoubleBiFunction} which delegates to the underlying {@link CheckedToDoubleBiFunction},
+     * {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked.
+     * 
+     * @param function the underlying checked function
+     * @return a {@link ToDoubleBiFunction} which delegates to the underlying {@link CheckedToDoubleBiFunction},
+     *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
+     */
+    public static <T, U> ToDoubleBiFunction<T, U> unchecked(final CheckedToDoubleBiFunction<? super T, ? super U> function) {
+        Objects.requireNonNull(function, "function == null");
+        return (t, u) -> {
+            try {
+                return function.applyAsDouble(t, u);
+            } catch (final Exception e) {
+                throw uncheckedException(e);
+            }
+        };
+    }
+
+}
