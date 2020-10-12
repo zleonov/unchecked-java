@@ -1,5 +1,5 @@
 Overview
-========
+--------
 
 [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions. As a consequence handling checked exceptions in lambda expressions can be overly cumbersome and verbose.
 
