@@ -7,7 +7,7 @@ import java.util.Objects;
  * 
  * @author Zhenya Leonov
  */
-public final class Exceptions {
+final class Exceptions {
 
     private Exceptions() {
     }
