@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Overview
 ========
 
@@ -60,4 +61,7 @@ Similar Libraries
 - [SneakyThrow](https://github.com/rainerhahnekamp/sneakythrow)
 - [throwing-function](https://github.com/pivovarit/throwing-function)
 - [jOOλ](https://github.com/jOOQ/jOOL) (org.jooq.lambda.Unchecked)
-- [Project Lombok](https://projectlombok.org/features/SneakyThrows) (SneakyThrows)
+- [Project Lombok](https://projectlombok.org/features/SneakyThrows) ([Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  SneakyThrows)
+=======
+# unchecked-java
+>>>>>>> branch 'master' of git@github.com:zleonov/unchecked-java.git
