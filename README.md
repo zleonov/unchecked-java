@@ -1,7 +1,7 @@
 Overview
 ========
 
-[Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions, which makes handling checked exceptions in lambda expressions overly cumbersome and verbose.
+[Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions. As a consequence handling checked exceptions in lambda expressions can be overly cumbersome and verbose.
 
 A simple example:
 
@@ -21,7 +21,7 @@ Stream.of("https://www.google.com").map(t -> {
 });
 ```
 
-Besides the boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException``, which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException`` which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
 
 ```java
 import static software.leonov.common.util.function.CheckedFunction.unchecked;
@@ -60,7 +60,4 @@ Similar Libraries
 - [SneakyThrow](https://github.com/rainerhahnekamp/sneakythrow)
 - [throwing-function](https://github.com/pivovarit/throwing-function)
 - [jOOλ](https://github.com/jOOQ/jOOL) (org.jooq.lambda.Unchecked)
-- [Project Lombok](https://projectlombok.org/features/SneakyThrows) ([Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  SneakyThrows)
-=======
-# unchecked-java
->>>>>>> branch 'master' of git@github.com:zleonov/unchecked-java.git
+- [Project Lombok](https://projectlombok.org/features/SneakyThrows)
