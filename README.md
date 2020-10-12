@@ -52,8 +52,8 @@ For further discussion see:
 
 [https://stackoverflow.com/questions/18198176](https://stackoverflow.com/questions/18198176)  
 [https://stackoverflow.com/questions/19757300](https://stackoverflow.com/questions/19757300)  
-[https://stackoverflow.com/questions/14039995](https://stackoverflow.com/questions/14039995)
-[Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  
+[https://stackoverflow.com/questions/14039995](https://stackoverflow.com/questions/14039995)  
+[Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 
 Similar Libraries
 -----------------
