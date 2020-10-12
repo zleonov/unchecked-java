@@ -1,0 +1,63 @@
+Overview
+========
+
+[Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions. Which makes handling checked exceptions in lambda expressions overly cumbersome and verbose.
+
+A simple example:
+
+```java
+Stream.of("https://www.google.com").map(URL::new);
+```
+
+Must be coded as:
+
+```java
+Stream.of("https://www.google.com").map(t -> {
+    try {
+        return new URL(t);
+    } catch (final MalformedURLException e) {
+        throw new RuntimeException(e);
+    }
+});
+```
+
+Besides the boiler-plate code we have to write to get this snippet to compile, we are also required to obfuscate the original exception and add unnecessary bloat to the stack trace that comes from wrapping it in a ``RuntimeException``. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+
+```java
+import static software.leonov.common.util.function.CheckedFunction.unchecked;
+...
+Stream.of("https://www.google.com").map(unchecked(URL::new));
+```
+
+Goals
+-----
+- Checked variants (which can throw checked exceptions) of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+- Adapter methods to view all checked variants as unchecked
+- Java 8 or higher
+- **No dependencies** (other than the JDK)
+- And more...
+
+WARNING
+=======
+**unchecked-java** bypasses Java's exception handling idiom and can lead to horrible errors when misused.
+
+As Brian Goetz (Java Language Architect) put it:
+
+> Just because you don’t like the rules, doesn’t mean its a good idea to take the law into your own hands. Your advice is irresponsible because it places the convenience of the code writer over the far more important considerations of transparency and maintainability of the program.
+
+
+It is only safe to use if you ensure the caller will catch all possible checked exceptions that could occur. If in doubt <b>do not use</b>.
+
+For further discussion see:
+
+[https://stackoverflow.com/questions/18198176](https://stackoverflow.com/questions/18198176)  
+[https://stackoverflow.com/questions/19757300](https://stackoverflow.com/questions/19757300)  
+[https://stackoverflow.com/questions/14039995](https://stackoverflow.com/questions/14039995)
+[Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)  
+
+Similar Libraries
+-----------------
+- [SneakyThrow](https://github.com/rainerhahnekamp/sneakythrow)
+- [throwing-function](https://github.com/pivovarit/throwing-function)
+- [jOOλ](https://github.com/jOOQ/jOOL) (org.jooq.lambda.Unchecked)
+- [Project Lombok](https://projectlombok.org/features/SneakyThrows) (SneakyThrows)
