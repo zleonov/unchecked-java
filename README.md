@@ -1,7 +1,7 @@
 Overview
 ========
 
-[Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions. Which makes handling checked exceptions in lambda expressions overly cumbersome and verbose.
+[Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions, which makes handling checked exceptions in lambda expressions overly cumbersome and verbose.
 
 A simple example:
 
@@ -21,7 +21,7 @@ Stream.of("https://www.google.com").map(t -> {
 });
 ```
 
-Besides the boiler-plate code we have to write to get this snippet to compile, we are also required to obfuscate the original exception and add unnecessary bloat to the stack trace that comes from wrapping it in a ``RuntimeException``. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+Besides the boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException``, which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
 
 ```java
 import static software.leonov.common.util.function.CheckedFunction.unchecked;
