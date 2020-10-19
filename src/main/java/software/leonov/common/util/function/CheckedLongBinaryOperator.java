@@ -30,7 +30,7 @@ public interface CheckedLongBinaryOperator {
      * @return a {@link LongBinaryOperator} which delegates to the underlying {@link CheckedLongBinaryOperator},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongBinaryOperator unchecked(final CheckedLongBinaryOperator operator) {
+    public static LongBinaryOperator evalUnchecked(final CheckedLongBinaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return (l, r) -> {
             try {

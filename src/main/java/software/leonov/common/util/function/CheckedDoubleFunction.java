@@ -28,7 +28,7 @@ public interface CheckedDoubleFunction<R> {
      * @return a {@link DoubleFunction} which delegates to the underlying {@link CheckedDoubleFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <R> DoubleFunction<R> unchecked(final CheckedDoubleFunction<? extends R> function) {
+    public static <R> DoubleFunction<R> evalUnchecked(final CheckedDoubleFunction<? extends R> function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

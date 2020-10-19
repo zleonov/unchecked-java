@@ -27,7 +27,7 @@ public interface CheckedBooleanSupplier {
      * @return a {@link BooleanSupplier} which delegates to the underlying {@link CheckedBooleanSupplier},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static BooleanSupplier unchecked(final CheckedBooleanSupplier supplier) {
+    public static BooleanSupplier evalUnchecked(final CheckedBooleanSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
         return () -> {
             try {
@@ -48,7 +48,7 @@ public interface CheckedBooleanSupplier {
      */
     public static boolean uncheckedGet(final CheckedBooleanSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
-        return unchecked(supplier).getAsBoolean();
+        return evalUnchecked(supplier).getAsBoolean();
     }
 
 }

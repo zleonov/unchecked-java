@@ -25,7 +25,7 @@ public interface CheckedRunnable {
      * @return a {@link Runnable} which delegates to the underlying {@link CheckedRunnable},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static Runnable unchecked(final CheckedRunnable runnable) {
+    public static Runnable evalUnchecked(final CheckedRunnable runnable) {
         Objects.requireNonNull(runnable, "runnable == null");
         return () -> {
             try {

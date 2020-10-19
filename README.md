@@ -21,12 +21,12 @@ Stream.of("https://www.google.com").map(t -> {
 });
 ```
 
-Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException`` which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException`` which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded to us by lambda expressions, without wrapping checked exceptions in runtime exceptions:
 
 ```java
-import static software.leonov.common.util.function.CheckedFunction.unchecked;
+import static software.leonov.common.util.function.CheckedFunction.evalUnchecked;
 ...
-Stream.of("https://www.google.com").map(unchecked(URL::new));
+Stream.of("https://www.google.com").map(evalUnchecked(URL::new));
 ```
 
 Goals

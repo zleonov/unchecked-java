@@ -71,7 +71,7 @@ public interface CheckedIntPredicate {
      * @return an {@link IntPredicate} which delegates to the underlying {@link CheckedIntPredicate},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static IntPredicate unchecked(final CheckedIntPredicate predicate) {
+    public static IntPredicate evalUnchecked(final CheckedIntPredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
         return d -> {
             try {

@@ -30,7 +30,7 @@ public interface CheckedToDoubleBiFunction<T, U> {
      * @return a {@link ToDoubleBiFunction} which delegates to the underlying {@link CheckedToDoubleBiFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U> ToDoubleBiFunction<T, U> unchecked(final CheckedToDoubleBiFunction<? super T, ? super U> function) {
+    public static <T, U> ToDoubleBiFunction<T, U> evalUnchecked(final CheckedToDoubleBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
         return (t, u) -> {
             try {

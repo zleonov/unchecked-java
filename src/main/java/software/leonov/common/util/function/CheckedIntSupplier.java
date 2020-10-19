@@ -27,7 +27,7 @@ public interface CheckedIntSupplier {
      * @return an {@link IntSupplier} which delegates to the underlying {@link CheckedIntSupplier},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static IntSupplier unchecked(final CheckedIntSupplier supplier) {
+    public static IntSupplier evalUnchecked(final CheckedIntSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
         return () -> {
             try {
@@ -48,7 +48,7 @@ public interface CheckedIntSupplier {
      */
     public static int uncheckedGet(final CheckedIntSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
-        return unchecked(supplier).getAsInt();
+        return evalUnchecked(supplier).getAsInt();
     }
 
 }

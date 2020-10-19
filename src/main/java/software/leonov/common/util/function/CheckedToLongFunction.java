@@ -28,7 +28,7 @@ public interface CheckedToLongFunction<T> {
      * @return a {@link ToLongFunction} which delegates to the underlying {@link CheckedToLongFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> ToLongFunction<T> unchecked(final CheckedToLongFunction<? super T> function) {
+    public static <T> ToLongFunction<T> evalUnchecked(final CheckedToLongFunction<? super T> function) {
         Objects.requireNonNull(function, "function == null");
         return t -> {
             try {

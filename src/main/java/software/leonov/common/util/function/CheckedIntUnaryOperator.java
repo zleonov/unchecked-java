@@ -59,7 +59,7 @@ public interface CheckedIntUnaryOperator {
      * @return an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static IntUnaryOperator unchecked(final CheckedIntUnaryOperator operator) {
+    public static IntUnaryOperator evalUnchecked(final CheckedIntUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return d -> {
             try {

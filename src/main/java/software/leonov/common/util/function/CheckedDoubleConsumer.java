@@ -45,7 +45,7 @@ public interface CheckedDoubleConsumer {
      * @return a {@link DoubleConsumer} which delegates to the underlying {@link CheckedDoubleConsumer},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoubleConsumer unchecked(final CheckedDoubleConsumer consumer) {
+    public static DoubleConsumer evalUnchecked(final CheckedDoubleConsumer consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
         return t -> {
             try {

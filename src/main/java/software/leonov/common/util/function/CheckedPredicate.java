@@ -71,7 +71,7 @@ public interface CheckedPredicate<T> {
      * @return a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> Predicate<T> unchecked(final CheckedPredicate<? super T> predicate) {
+    public static <T> Predicate<T> evalUnchecked(final CheckedPredicate<? super T> predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
         return t -> {
             try {

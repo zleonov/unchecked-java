@@ -30,7 +30,7 @@ public interface CheckedIntBinaryOperator {
      * @return an {@link IntBinaryOperator} which delegates to the underlying {@link CheckedIntBinaryOperator},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static IntBinaryOperator unchecked(final CheckedIntBinaryOperator operator) {
+    public static IntBinaryOperator evalUnchecked(final CheckedIntBinaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return (l, r) -> {
             try {

@@ -28,7 +28,7 @@ public interface CheckedLongFunction<R> {
      * @return a {@link LongFunction} which delegates to the underlying {@link CheckedLongFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <R> LongFunction<R> unchecked(final CheckedLongFunction<? extends R> function) {
+    public static <R> LongFunction<R> evalUnchecked(final CheckedLongFunction<? extends R> function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

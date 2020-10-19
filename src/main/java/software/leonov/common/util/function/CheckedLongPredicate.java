@@ -72,7 +72,7 @@ public interface CheckedLongPredicate {
      * @return a {@link LongPredicate} which delegates to the underlying {@link CheckedLongPredicate},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongPredicate unchecked(final CheckedLongPredicate predicate) {
+    public static LongPredicate evalUnchecked(final CheckedLongPredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
         return d -> {
             try {

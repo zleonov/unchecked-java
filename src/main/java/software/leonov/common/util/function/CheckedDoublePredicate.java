@@ -72,7 +72,7 @@ public interface CheckedDoublePredicate {
      * @return a {@link DoublePredicate} which delegates to the underlying {@link CheckedDoublePredicate},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoublePredicate unchecked(final CheckedDoublePredicate predicate) {
+    public static DoublePredicate evalUnchecked(final CheckedDoublePredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
         return d -> {
             try {

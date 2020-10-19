@@ -27,7 +27,7 @@ public interface CheckedLongSupplier {
      * @return a {@link LongSupplier} which delegates to the underlying {@link CheckedLongSupplier},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongSupplier unchecked(final CheckedLongSupplier supplier) {
+    public static LongSupplier evalUnchecked(final CheckedLongSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
         return () -> {
             try {
@@ -48,7 +48,7 @@ public interface CheckedLongSupplier {
      */
     public static long uncheckedGet(final CheckedLongSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
-        return unchecked(supplier).getAsLong();
+        return evalUnchecked(supplier).getAsLong();
     }
 
 }

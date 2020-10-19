@@ -29,7 +29,7 @@ public interface CheckedLongToDoubleFunction {
      * @return a {@link LongToDoubleFunction} which delegates to the underlying {@link CheckedLongToDoubleFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongToDoubleFunction unchecked(final CheckedLongToDoubleFunction function) {
+    public static LongToDoubleFunction evalUnchecked(final CheckedLongToDoubleFunction function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

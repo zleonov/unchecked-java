@@ -28,7 +28,7 @@ public interface CheckedToDoubleFunction<T> {
      * @return a {@link ToDoubleFunction} which delegates to the underlying {@link CheckedToDoubleFunction},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> ToDoubleFunction<T> unchecked(final CheckedToDoubleFunction<? super T> function) {
+    public static <T> ToDoubleFunction<T> evalUnchecked(final CheckedToDoubleFunction<? super T> function) {
         Objects.requireNonNull(function, "function == null");
         return t -> {
             try {

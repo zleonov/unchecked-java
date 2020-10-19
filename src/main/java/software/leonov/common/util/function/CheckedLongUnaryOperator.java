@@ -60,7 +60,7 @@ public interface CheckedLongUnaryOperator {
      * @return a {@link LongUnaryOperator} which delegates to the underlying {@link CheckedLongUnaryOperator},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongUnaryOperator unchecked(final CheckedLongUnaryOperator operator) {
+    public static LongUnaryOperator evalUnchecked(final CheckedLongUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return d -> {
             try {

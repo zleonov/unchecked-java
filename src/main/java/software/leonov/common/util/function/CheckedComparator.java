@@ -55,7 +55,7 @@ public interface CheckedComparator<T> {
      * @return a {@link Comparator} which delegates to the underlying {@link CheckedComparator},
      *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> Comparator<T> unchecked(final CheckedComparator<? super T> comparator) {
+    public static <T> Comparator<T> evalUnchecked(final CheckedComparator<? super T> comparator) {
         Objects.requireNonNull(comparator, "comparator == null");
         return (left, right) -> {
             try {
