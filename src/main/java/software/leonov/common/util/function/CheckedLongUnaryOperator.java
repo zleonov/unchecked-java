@@ -43,7 +43,6 @@ public interface CheckedLongUnaryOperator {
      *
      * @param after the operator to apply after this operator is applied
      * @return a composed operator that first applies this operator and then applies the {@code after} operator
-     * @throws NullPointerException if after is null
      *
      * @see #compose(CheckedLongUnaryOperator)
      */
