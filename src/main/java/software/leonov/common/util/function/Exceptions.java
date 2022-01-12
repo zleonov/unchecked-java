@@ -28,7 +28,7 @@ final class Exceptions {
      *     } catch (final IKnowWhatToDoWithThisException e) {
      *         ...
      *     } catch (final Exception e) {
-     *         throw evalUnchecked(e);
+     *         throw uncheckedException(e);
      *     }
      * }
      * </pre>
