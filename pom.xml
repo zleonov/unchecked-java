@@ -16,7 +16,7 @@
     </properties>
 
     <name>Unchecked Java</name>
-    <description>Java Streams with checked-exception safe lambdas</description>
+    <description>Java streams with checked-exception safe lambdas</description>
     <url>https://github.com/zleonov/unchecked-java</url>
 
     <licenses>
