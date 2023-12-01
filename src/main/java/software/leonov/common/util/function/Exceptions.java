@@ -15,9 +15,6 @@ public final class Exceptions {
     /**
      * Propagates the specified {@code Exception} as if it is always an instance of {@code RuntimeException} without
      * wrapping it in a {@code RuntimeException}.
-     * 
-     * The main advantage this method has over {@link Throwables#propagate(Throwable)} is not filling up the stack trace
-     * with unnecessary bloat that comes from wrapping a checked exception in a {@code RuntimeException}.
      * <p>
      * For example:
      * 
@@ -40,10 +37,10 @@ public final class Exceptions {
      * 
      * @param e the specified throwable
      * @return this method does not return - the return type is only for your convenience to make the compiler happy
-     * @throws the specified throwable - always
+     * @throws E always as an unchecked exception
      */
     @SuppressWarnings("unchecked")
-    public static <E extends Exception> RuntimeException uncheckedException(final Exception e) throws E {
+    public static <E extends Throwable> RuntimeException uncheckedException(final Throwable e) throws E {
         Objects.requireNonNull(e, "e == null");
         throw (E) e;
     }
