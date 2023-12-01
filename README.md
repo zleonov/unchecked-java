@@ -1,9 +1,13 @@
+Unchecked Java
+===============
+Offering the capability to treat checked exceptions as unchecked and write check-exception-friendly streams.
+
 Overview
 --------
 
 [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) provided in Java 8+ do not throw checked exceptions. As a consequence handling checked exceptions in lambda expressions can be overly cumbersome and verbose.
 
-A simple example:
+For example:
 
 ```java
 Stream.of("https://www.google.com").map(URL::new);
@@ -21,7 +25,7 @@ Stream.of("https://www.google.com").map(t -> {
 });
 ```
 
-Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a ``RuntimeException`` which adds unnecessary bloat to the stack trace. Using **unchecked-java** we can again write concise code afforded to us by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a `RuntimeException` which adds unnecessary bloat to the stack trace. Using **Unchecked Java** we can again write concise code afforded to us by lambda expressions, without wrapping checked exceptions in runtime exceptions:
 
 ```java
 import static software.leonov.common.util.function.CheckedFunction.evalUnchecked;
@@ -31,15 +35,19 @@ Stream.of("https://www.google.com").map(evalUnchecked(URL::new));
 
 Goals
 -----
-- Checked variants (which can throw checked exceptions) of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+- Variants of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) which can throw checked exceptions
 - Adapter methods to view all checked variants as unchecked
 - Java 8 or higher
 - **No dependencies** (other than the JDK)
 - And more...
 
+Documentation
+-------------
+The latest API documentation can be accessed [here](https://zleonov.github.io/unchecked-java/apidocs/latest).
+
 WARNING
 =======
-**unchecked-java** bypasses Java's exception handling idiom and can lead to horrible errors when misused.
+**Unchecked Java** bypasses Java's exception handling idiom and can lead to horrible errors when misused.
 
 As Brian Goetz (Java Language Architect) put it:
 
