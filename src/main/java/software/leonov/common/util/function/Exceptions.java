@@ -7,7 +7,7 @@ import java.util.Objects;
  * 
  * @author Zhenya Leonov
  */
-final class Exceptions {
+public final class Exceptions {
 
     private Exceptions() {
     }
@@ -28,7 +28,7 @@ final class Exceptions {
      *     } catch (final IKnowWhatToDoWithThisException e) {
      *         ...
      *     } catch (final Exception e) {
-     *         throw evalUnchecked(e);
+     *         throw uncheckedException(e);
      *     }
      * }
      * </pre>
