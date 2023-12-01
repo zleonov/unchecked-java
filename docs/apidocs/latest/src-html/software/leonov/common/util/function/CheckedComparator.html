@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package software.leonov.common.util.function;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>import static software.leonov.common.util.function.Exceptions.uncheckedException;<a name="line.3"></a>
+<span class="sourceLineNo">004</span><a name="line.4"></a>
+<span class="sourceLineNo">005</span>import java.io.Serializable;<a name="line.5"></a>
+<span class="sourceLineNo">006</span>import java.util.Comparator;<a name="line.6"></a>
+<span class="sourceLineNo">007</span>import java.util.Objects;<a name="line.7"></a>
+<span class="sourceLineNo">008</span><a name="line.8"></a>
+<span class="sourceLineNo">009</span>/**<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Mirror of the {@link Comparator} interface whose {@code compare(T, T)} method can throw a checked exception.<a name="line.10"></a>
+<span class="sourceLineNo">011</span> */<a name="line.11"></a>
+<span class="sourceLineNo">012</span>@FunctionalInterface<a name="line.12"></a>
+<span class="sourceLineNo">013</span>public interface CheckedComparator&lt;T&gt; {<a name="line.13"></a>
+<span class="sourceLineNo">014</span><a name="line.14"></a>
+<span class="sourceLineNo">015</span>    /**<a name="line.15"></a>
+<span class="sourceLineNo">016</span>     * Compares its two arguments for order.<a name="line.16"></a>
+<span class="sourceLineNo">017</span>     *<a name="line.17"></a>
+<span class="sourceLineNo">018</span>     * @param o1 the first argument<a name="line.18"></a>
+<span class="sourceLineNo">019</span>     * @param o2 the second argument<a name="line.19"></a>
+<span class="sourceLineNo">020</span>     * @return a negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than<a name="line.20"></a>
+<span class="sourceLineNo">021</span>     *         the second<a name="line.21"></a>
+<span class="sourceLineNo">022</span>     * @throws Exception if an error occurs<a name="line.22"></a>
+<span class="sourceLineNo">023</span>     */<a name="line.23"></a>
+<span class="sourceLineNo">024</span>    public int compare(T o1, T o2) throws Exception;<a name="line.24"></a>
+<span class="sourceLineNo">025</span><a name="line.25"></a>
+<span class="sourceLineNo">026</span>    /**<a name="line.26"></a>
+<span class="sourceLineNo">027</span>     * Returns a composed comparator which tries {@code this} comparator, followed by the {@code other} comparator if this<a name="line.27"></a>
+<span class="sourceLineNo">028</span>     * comparator returns a zero result.<a name="line.28"></a>
+<span class="sourceLineNo">029</span>     * &lt;p&gt;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>     * The returned comparator is serializable if the specified comparator is also serializable.<a name="line.30"></a>
+<span class="sourceLineNo">031</span>     *<a name="line.31"></a>
+<span class="sourceLineNo">032</span>     * @param other the other comparator to be used when {@code this} comparator determines that two objects are equal<a name="line.32"></a>
+<span class="sourceLineNo">033</span>     * @return a composed comparator which tries {@code this} comparator, followed by the {@code other} comparator if this<a name="line.33"></a>
+<span class="sourceLineNo">034</span>     *         comparator returns a zero result<a name="line.34"></a>
+<span class="sourceLineNo">035</span>     */<a name="line.35"></a>
+<span class="sourceLineNo">036</span>    @SuppressWarnings("unchecked")<a name="line.36"></a>
+<span class="sourceLineNo">037</span>    public default CheckedComparator&lt;T&gt; thenComparing(final CheckedComparator&lt;? super T&gt; other) {<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        Objects.requireNonNull(other, "other == null");<a name="line.38"></a>
+<span class="sourceLineNo">039</span>        return (CheckedComparator&lt;T&gt; &amp; Serializable) (c1, c2) -&gt; {<a name="line.39"></a>
+<span class="sourceLineNo">040</span>            int res = compare(c1, c2);<a name="line.40"></a>
+<span class="sourceLineNo">041</span>            return (res != 0) ? res : other.compare(c1, c2);<a name="line.41"></a>
+<span class="sourceLineNo">042</span>        };<a name="line.42"></a>
+<span class="sourceLineNo">043</span>    }<a name="line.43"></a>
+<span class="sourceLineNo">044</span><a name="line.44"></a>
+<span class="sourceLineNo">045</span>    /*<a name="line.45"></a>
+<span class="sourceLineNo">046</span>     * Is there any point in having the additional reversed, thenComparingXXXX, static reverseOrder, static naturalOrder,<a name="line.46"></a>
+<span class="sourceLineNo">047</span>     * etc., methods to match the functionality of the Comparator interface?<a name="line.47"></a>
+<span class="sourceLineNo">048</span>     */<a name="line.48"></a>
+<span class="sourceLineNo">049</span><a name="line.49"></a>
+<span class="sourceLineNo">050</span>    /**<a name="line.50"></a>
+<span class="sourceLineNo">051</span>     * Returns a {@link Comparator} which delegates to the underlying {@link CheckedComparator},<a name="line.51"></a>
+<span class="sourceLineNo">052</span>     * {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked.<a name="line.52"></a>
+<span class="sourceLineNo">053</span>     * <a name="line.53"></a>
+<span class="sourceLineNo">054</span>     * @param comparator the specified checked comparator<a name="line.54"></a>
+<span class="sourceLineNo">055</span>     * @return a {@link Comparator} which delegates to the underlying {@link CheckedComparator},<a name="line.55"></a>
+<span class="sourceLineNo">056</span>     *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked<a name="line.56"></a>
+<span class="sourceLineNo">057</span>     */<a name="line.57"></a>
+<span class="sourceLineNo">058</span>    public static &lt;T&gt; Comparator&lt;T&gt; evalUnchecked(final CheckedComparator&lt;? super T&gt; comparator) {<a name="line.58"></a>
+<span class="sourceLineNo">059</span>        Objects.requireNonNull(comparator, "comparator == null");<a name="line.59"></a>
+<span class="sourceLineNo">060</span>        return (left, right) -&gt; {<a name="line.60"></a>
+<span class="sourceLineNo">061</span>            try {<a name="line.61"></a>
+<span class="sourceLineNo">062</span>                return comparator.compare(left, right);<a name="line.62"></a>
+<span class="sourceLineNo">063</span>            } catch (final Exception e) {<a name="line.63"></a>
+<span class="sourceLineNo">064</span>                throw uncheckedException(e);<a name="line.64"></a>
+<span class="sourceLineNo">065</span>            }<a name="line.65"></a>
+<span class="sourceLineNo">066</span>        };<a name="line.66"></a>
+<span class="sourceLineNo">067</span>    }<a name="line.67"></a>
+<span class="sourceLineNo">068</span><a name="line.68"></a>
+<span class="sourceLineNo">069</span>}<a name="line.69"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>
