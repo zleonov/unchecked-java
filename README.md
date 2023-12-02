@@ -1,6 +1,6 @@
 Unchecked Java
 ===============
-Offering the capability to treat checked exceptions as unchecked and write check-exception safe lambdas.
+Offering the capability to treat checked exceptions as unchecked and write checked-exception-friendly lambdas.
 
 Overview
 --------
