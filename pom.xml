@@ -41,6 +41,17 @@
         </resources>
         <plugins>
             <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/docs/api</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven-source-plugin.version}</version>
@@ -85,7 +96,7 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.basedir}/docs/apidocs/latest</outputDirectory>
+                            <outputDirectory>${project.basedir}/docs/api/latest</outputDirectory>
                         </configuration>
                     </execution>
                     <execution>
@@ -94,7 +105,7 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
-                            <reportOutputDirectory>${project.basedir}/docs/apidocs</reportOutputDirectory>
+                            <reportOutputDirectory>${project.basedir}/docs/api</reportOutputDirectory>
                             <destDir>latest</destDir>
                         </configuration>
                     </execution>

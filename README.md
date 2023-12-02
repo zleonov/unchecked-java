@@ -43,7 +43,7 @@ Goals
 
 Documentation
 -------------
-The latest API documentation can be accessed [here](https://zleonov.github.io/unchecked-java/apidocs/latest).
+The latest API documentation can be accessed [here](https://zleonov.github.io/unchecked-java/api/latest).
 
 WARNING
 =======
