@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.13">CheckedDoubleBinaryOperator</a></pre>
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.28">CheckedDoubleBinaryOperator</a></pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleBinaryOperator</code></a> interface whose <code>applyAsDouble(double, double)</code> method can throw a
  checked exception.</div>
 </li>
@@ -161,7 +161,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>applyAsDouble</h4>
-<pre>double&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.23">applyAsDouble</a>(double&nbsp;left,
+<pre>double&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.38">applyAsDouble</a>(double&nbsp;left,
                      double&nbsp;right)
               throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Applies this operator to the given operands.</div>
@@ -182,7 +182,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleBinaryOperator</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.33">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedDoubleBinaryOperator</a>&nbsp;operator)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleBinaryOperator</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleBinaryOperator.html#line.48">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedDoubleBinaryOperator</a>&nbsp;operator)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleBinaryOperator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedDoubleBinaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedDoubleBinaryOperator</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

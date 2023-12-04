@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.13">CheckedLongPredicate</a></pre>
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.28">CheckedLongPredicate</a></pre>
 <div class="block">Mirror of the <a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function"><code>CheckedLongPredicate</code></a> interface whose <code>test(long)</code> method can throw a checked
  exception.</div>
 </li>
@@ -178,7 +178,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>test</h4>
-<pre>boolean&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.22">test</a>(long&nbsp;value)
+<pre>boolean&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.37">test</a>(long&nbsp;value)
       throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Evaluates this predicate on the given argument.</div>
 <dl>
@@ -197,7 +197,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.36">and</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;other)</pre>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.51">and</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;other)</pre>
 <div class="block">Returns a composed predicate that represents a short-circuiting logical AND of this predicate and another. When
  evaluating the composed predicate, if this predicate is <code>false</code>, then the <code>other</code> predicate is not
  evaluated.
@@ -219,7 +219,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>negate</h4>
-<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.46">negate</a>()</pre>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.61">negate</a>()</pre>
 <div class="block">Returns a predicate that represents the logical negation of this predicate.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -233,7 +233,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>or</h4>
-<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.62">or</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;other)</pre>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.77">or</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;other)</pre>
 <div class="block">Returns a composed predicate that represents a short-circuiting logical OR of this predicate and another. When
  evaluating the composed predicate, if this predicate is <code>true</code>, then the <code>other</code> predicate is not
  evaluated.
@@ -255,7 +255,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongPredicate.html?is-external=true" title="class or interface in java.util.function">LongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.75">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;predicate)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongPredicate.html?is-external=true" title="class or interface in java.util.function">LongPredicate</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedLongPredicate.html#line.90">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function">CheckedLongPredicate</a>&nbsp;predicate)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongPredicate.html?is-external=true" title="class or interface in java.util.function"><code>LongPredicate</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedLongPredicate.html" title="interface in software.leonov.common.util.function"><code>CheckedLongPredicate</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

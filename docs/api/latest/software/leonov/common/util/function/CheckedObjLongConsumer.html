@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.12">CheckedObjLongConsumer</a>&lt;T&gt;</pre>
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.27">CheckedObjLongConsumer</a>&lt;T&gt;</pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjLongConsumer.html?is-external=true" title="class or interface in java.util.function"><code>ObjLongConsumer</code></a> interface whose <code>accept(T, long)</code> method can throw a checked exception.</div>
 </li>
 </ul>
@@ -162,7 +162,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>accept</h4>
-<pre>void&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.21">accept</a>(<a href="../../../../../software/leonov/common/util/function/CheckedObjLongConsumer.html" title="type parameter in CheckedObjLongConsumer">T</a>&nbsp;t,
+<pre>void&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.36">accept</a>(<a href="../../../../../software/leonov/common/util/function/CheckedObjLongConsumer.html" title="type parameter in CheckedObjLongConsumer">T</a>&nbsp;t,
             long&nbsp;value)
      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Performs this operation on the given arguments.</div>
@@ -181,7 +181,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjLongConsumer.html?is-external=true" title="class or interface in java.util.function">ObjLongConsumer</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.31">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedObjLongConsumer.html" title="interface in software.leonov.common.util.function">CheckedObjLongConsumer</a>&lt;? super T&gt;&nbsp;consumer)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjLongConsumer.html?is-external=true" title="class or interface in java.util.function">ObjLongConsumer</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedObjLongConsumer.html#line.46">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedObjLongConsumer.html" title="interface in software.leonov.common.util.function">CheckedObjLongConsumer</a>&lt;? super T&gt;&nbsp;consumer)</pre>
 <div class="block">Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjLongConsumer.html?is-external=true" title="class or interface in java.util.function"><code>ObjLongConsumer</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedObjLongConsumer.html" title="interface in software.leonov.common.util.function"><code>CheckedObjLongConsumer</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.12">CheckedDoubleConsumer</a></pre>
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.27">CheckedDoubleConsumer</a></pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html?is-external=true" title="class or interface in java.util.function"><code>DoubleConsumer</code></a> interface whose <code>accept(double)</code> method can throw a checked exception.</div>
 </li>
 </ul>
@@ -166,7 +166,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>accept</h4>
-<pre>void&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.20">accept</a>(double&nbsp;value)
+<pre>void&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.35">accept</a>(double&nbsp;value)
      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Performs this operation on the given argument.</div>
 <dl>
@@ -183,7 +183,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>andThen</h4>
-<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.32">andThen</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;after)</pre>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.47">andThen</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;after)</pre>
 <div class="block">Returns a composed <code>CheckedDoubleConsumer</code> that performs, in sequence, this operation followed by the
  <code>after</code> operation. If performing either operation throws an exception, it is relayed to the caller of the
  composed operation. If performing <code>this</code> operation throws an exception, the <code>after</code> operation will not be
@@ -203,7 +203,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html?is-external=true" title="class or interface in java.util.function">DoubleConsumer</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.48">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;consumer)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html?is-external=true" title="class or interface in java.util.function">DoubleConsumer</a>&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedDoubleConsumer.html#line.63">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function">CheckedDoubleConsumer</a>&nbsp;consumer)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html?is-external=true" title="class or interface in java.util.function"><code>DoubleConsumer</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedDoubleConsumer.html" title="interface in software.leonov.common.util.function"><code>CheckedDoubleConsumer</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

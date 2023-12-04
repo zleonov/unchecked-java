@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.12">CheckedBinaryOperator</a>&lt;T&gt;
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.27">CheckedBinaryOperator</a>&lt;T&gt;
 extends <a href="../../../../../software/leonov/common/util/function/CheckedBiFunction.html" title="interface in software.leonov.common.util.function">CheckedBiFunction</a>&lt;T,T,T&gt;</pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>BinaryOperator</code></a> interface whose <code>apply(T, T)</code> method can throw a checked exception.</div>
 </li>
@@ -179,7 +179,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedBiFu
 <ul class="blockList">
 <li class="blockList">
 <h4>minBy</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.22">minBy</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.37">minBy</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
 <div class="block">Returns a <a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedBinaryOperator</code></a> which returns the lesser of two elements according to the specified
  <code>CheckedComparator</code>.</div>
 <dl>
@@ -197,7 +197,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedBiFu
 <ul class="blockList">
 <li class="blockList">
 <h4>maxBy</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.35">maxBy</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.50">maxBy</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
 <div class="block">Returns a <a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedBinaryOperator</code></a> which returns the greater of two elements according to the specified
  <code>Comparator</code>.</div>
 <dl>
@@ -215,7 +215,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedBiFu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.48">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;operator)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedBinaryOperator.html#line.63">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function">CheckedBinaryOperator</a>&lt;T&gt;&nbsp;operator)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>BinaryOperator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedBinaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedBinaryOperator</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

@@ -105,7 +105,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.12">CheckedToIntBiFunction</a>&lt;T,U&gt;</pre>
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.27">CheckedToIntBiFunction</a>&lt;T,U&gt;</pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntBiFunction.html?is-external=true" title="class or interface in java.util.function"><code>ToIntBiFunction</code></a> interface whose <code>applyAsInt(T, U)</code> method can throw a checked exception.</div>
 </li>
 </ul>
@@ -162,7 +162,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>applyAsInt</h4>
-<pre>int&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.22">applyAsInt</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="type parameter in CheckedToIntBiFunction">T</a>&nbsp;t,
+<pre>int&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.37">applyAsInt</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="type parameter in CheckedToIntBiFunction">T</a>&nbsp;t,
                <a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="type parameter in CheckedToIntBiFunction">U</a>&nbsp;u)
         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Applies this function to the given arguments.</div>
@@ -183,7 +183,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;&lt;T,U&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntBiFunction.html?is-external=true" title="class or interface in java.util.function">ToIntBiFunction</a>&lt;T,U&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.32">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntBiFunction</a>&lt;? super T,? super U&gt;&nbsp;function)</pre>
+<pre>static&nbsp;&lt;T,U&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntBiFunction.html?is-external=true" title="class or interface in java.util.function">ToIntBiFunction</a>&lt;T,U&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedToIntBiFunction.html#line.47">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntBiFunction</a>&lt;? super T,? super U&gt;&nbsp;function)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntBiFunction.html?is-external=true" title="class or interface in java.util.function"><code>ToIntBiFunction</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedToIntBiFunction.html" title="interface in software.leonov.common.util.function"><code>CheckedToIntBiFunction</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>
