@@ -1,6 +1,6 @@
 Unchecked Java
 ===============
-Write lambda expressions that are free from checked-exceptions side effects.
+Java Streams and lambda expressions that are free from checked-exceptions side effects.
 
 Overview
 --------
