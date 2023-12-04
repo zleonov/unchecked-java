@@ -1,6 +1,6 @@
 Unchecked Java
 ===============
-Offering the capability to handle checked-exceptions as if they were unchecked, enabling the creation of lambda expressions that are safe from checked-exceptions side effects.
+Write lambda expressions that are free from checked-exceptions side effects.
 
 Overview
 --------
@@ -35,7 +35,7 @@ Stream.of("https://www.google.com").map(evalUnchecked(URL::new));
 
 Goals
 -----
-- Variants of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) which can throw checked exceptions
+- Variants of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) which can throw checked exceptions (including support for all higher-order functions)
 - Adapter methods to view all checked variants as unchecked
 - Java 8 or higher
 - **No dependencies** (other than the JDK)
