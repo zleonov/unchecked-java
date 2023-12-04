@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2023 Zhenya Leonov
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package software.leonov.common.util.function;
 
 import static software.leonov.common.util.function.Exceptions.uncheckedException;
@@ -52,11 +67,11 @@ public interface CheckedIntUnaryOperator {
 
     /**
      * Returns an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},
-     * {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},
-     *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static IntUnaryOperator evalUnchecked(final CheckedIntUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");

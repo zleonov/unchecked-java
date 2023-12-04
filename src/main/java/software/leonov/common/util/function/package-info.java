@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Zhenya Leonov
+ * Copyright (C) 2023 Zhenya Leonov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 /**
- * Utilities and functional interfaces which ignore checked exceptions and provide target types for lambda expressions
+ * Functional interfaces and adapters which ignore checked exceptions and provide target types for lambda expressions
  * and method references.
  */
 package software.leonov.common.util.function;
