@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":17,"i2":18};
+var methods = {"i0":6,"i1":17,"i2":17,"i3":17,"i4":17,"i5":17,"i6":17,"i7":17,"i8":17,"i9":17,"i10":18,"i11":17,"i12":18,"i13":18,"i14":18,"i15":18,"i16":18,"i17":18};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -127,23 +127,125 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#compare-T-T-">compare</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;o1,
-       <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;o2)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#compare-T-T-">compare</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;left,
+       <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;right)</code>
 <div class="block">Compares its two arguments for order.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static &lt;T,U extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super U&gt;&gt;<br><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#comparing-software.leonov.common.util.function.CheckedFunction-">comparing</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super T,? extends U&gt;&nbsp;function)</code>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the results
+ according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static &lt;T,U&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#comparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">comparing</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super T,? extends U&gt;&nbsp;function,
+         <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super U&gt;&nbsp;comparator)</code>
+<div class="block">Returns a comparator that uses the specified comparator to compare the results of applying the specified function to
+ each element of <code>type T</code>.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#comparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">comparingDouble</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToDoubleFunction.html" title="interface in software.leonov.common.util.function">CheckedToDoubleFunction</a>&lt;? super T&gt;&nbsp;function)</code>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>double</code> results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#comparingInt-software.leonov.common.util.function.CheckedToIntFunction-">comparingInt</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntFunction</a>&lt;? super T&gt;&nbsp;function)</code>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>int</code> results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#comparingLong-software.leonov.common.util.function.CheckedToLongFunction-">comparingLong</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function">CheckedToLongFunction</a>&lt;? super T&gt;&nbsp;function)</code>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>long</code> results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#evalUnchecked-software.leonov.common.util.function.CheckedComparator-">evalUnchecked</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</code>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util"><code>Comparator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function"><code>CheckedComparator</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super T&gt;&gt;<br><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#naturalOrder--">naturalOrder</a></span>()</code>
+<div class="block">Returns a comparator that compares values according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#nullsFirst-software.leonov.common.util.function.CheckedComparator-">nullsFirst</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</code>
+<div class="block">Returns a comparator that considers <code>null</code> values to be less than non-<code>null</code> values.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#nullsLast-software.leonov.common.util.function.CheckedComparator-">nullsLast</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</code>
+<div class="block">Returns a comparator that considers <code>null</code> values to be greater than non-<code>null</code> values.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>default <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#reversed--">reversed</a></span>()</code>
+<div class="block">Returns a comparator that has the reverse ordering of this comparator.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static &lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super T&gt;&gt;<br><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#reverseOrder--">reverseOrder</a></span>()</code>
+<div class="block">Returns a comparator that compares values according to the reverse of their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>default <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedComparator-">thenComparing</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;other)</code>
-<div class="block">Returns a composed comparator which tries <code>this</code> comparator, followed by the <code>other</code> comparator if this
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator, followed by the <code>other</code> comparator if this
  comparator returns a zero result.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>default &lt;U extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super U&gt;&gt;<br><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedFunction-">thenComparing</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>,? extends U&gt;&nbsp;function)</code>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>default &lt;U&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">thenComparing</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>,? extends U&gt;&nbsp;function,
+             <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super U&gt;&nbsp;other)</code>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before using the <code>other</code> comparator.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>default <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">thenComparingDouble</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToDoubleFunction.html" title="interface in software.leonov.common.util.function">CheckedToDoubleFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</code>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>double</code> results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code>default <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparingInt-software.leonov.common.util.function.CheckedToIntFunction-">thenComparingInt</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</code>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>int</code> results according to their <i>natural ordering</i>.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>default <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedComparator.html#thenComparingLong-software.leonov.common.util.function.CheckedToLongFunction-">thenComparingLong</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function">CheckedToLongFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</code>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>long</code> results according to their <i>natural ordering</i>.</div>
 </td>
 </tr>
 </table>
@@ -169,19 +271,227 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>compare</h4>
-<pre>int&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.24">compare</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;o1,
-            <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;o2)
+<pre>int&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.24">compare</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;left,
+            <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&nbsp;right)
      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></pre>
 <div class="block">Compares its two arguments for order.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>o1</code> - the first argument</dd>
-<dd><code>o2</code> - the second argument</dd>
+<dd><code>left</code> - the first argument</dd>
+<dd><code>right</code> - the second argument</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than
          the second</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a></code> - if an error occurs</dd>
+</dl>
+</li>
+</ul>
+<a name="comparing-software.leonov.common.util.function.CheckedFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparing</h4>
+<pre>static&nbsp;&lt;T,U extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super U&gt;&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.39">comparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super T,? extends U&gt;&nbsp;function)</pre>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the results
+ according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified function is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dd><code>U</code> - the type of the result returned by the function</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that applies the specified function to each element of <code>type T</code> and compares the results
+         according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="comparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparing</h4>
+<pre>static&nbsp;&lt;T,U&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.58">comparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super T,? extends U&gt;&nbsp;function,
+                                            <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super U&gt;&nbsp;comparator)</pre>
+<div class="block">Returns a comparator that uses the specified comparator to compare the results of applying the specified function to
+ each element of <code>type T</code>.
+ <p>
+ The returned comparator is serializable if both the function and the specified comparator are serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dd><code>U</code> - the type of the result returned by the function</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dd><code>comparator</code> - the comparator to use to compare elements of <code>type U</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that uses the specified comparator to compare the results of applying the specified function to
+         each element of <code>type T</code></dd>
+</dl>
+</li>
+</ul>
+<a name="comparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparingDouble</h4>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.76">comparingDouble</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToDoubleFunction.html" title="interface in software.leonov.common.util.function">CheckedToDoubleFunction</a>&lt;? super T&gt;&nbsp;function)</pre>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>double</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified function is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that applies the specified function to each element of <code>type T</code> and compares the
+         <code>double</code> results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="comparingInt-software.leonov.common.util.function.CheckedToIntFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparingInt</h4>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.93">comparingInt</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntFunction</a>&lt;? super T&gt;&nbsp;function)</pre>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>int</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified function is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that applies the specified function to each element of <code>type T</code> and compares the
+         <code>int</code> results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="comparingLong-software.leonov.common.util.function.CheckedToLongFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>comparingLong</h4>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.110">comparingLong</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function">CheckedToLongFunction</a>&lt;? super T&gt;&nbsp;function)</pre>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>long</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified function is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that applies the specified function to each element of <code>type T</code> and compares the
+         <code>long</code> results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="naturalOrder--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>naturalOrder</h4>
+<pre>static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super T&gt;&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.124">naturalOrder</a>()</pre>
+<div class="block">Returns a comparator that compares values according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable and does not accept <code>null</code> values.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of element to be compared</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that compares values according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="nullsFirst-software.leonov.common.util.function.CheckedComparator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nullsFirst</h4>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.139">nullsFirst</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
+<div class="block">Returns a comparator that considers <code>null</code> values to be less than non-<code>null</code> values. If both are
+ non-<code>null</code>, the specified comparator is used to determine the order. If the specified comparator is
+ <code>null</code>, then the returned comparator considers all non-<code>null</code> values to be equal.
+ <p>
+ The returned comparator is serializable if the specified comparator is serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of the elements to be compared</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>comparator</code> - the comparator to use for comparing non-<code>null</code> values</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that considers <code>null</code> values to be less than non-<code>null</code> values</dd>
+</dl>
+</li>
+</ul>
+<a name="nullsLast-software.leonov.common.util.function.CheckedComparator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nullsLast</h4>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.154">nullsLast</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
+<div class="block">Returns a comparator that considers <code>null</code> values to be greater than non-<code>null</code> values. If both are
+ non-<code>null</code>, the specified comparator is used to determine the order. If the specified comparator is
+ <code>null</code>, then the returned comparator considers all non-<code>null</code> values to be equal.
+ <p>
+ The returned comparator is serializable if the specified comparator is serializable.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of the elements to be compared</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>comparator</code> - the comparator to use for comparing non-<code>null</code> values</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that considers <code>null</code> values to be greater than non-<code>null</code> values</dd>
+</dl>
+</li>
+</ul>
+<a name="reverseOrder--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reverseOrder</h4>
+<pre>static&nbsp;&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super T&gt;&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.167">reverseOrder</a>()</pre>
+<div class="block">Returns a comparator that compares values according to the reverse of their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable and does not accept <code>null</code> values.</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang"><code>Comparable</code></a> type of element to be compared</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that compares values according to the reverse of their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="reversed--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reversed</h4>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.176">reversed</a>()</pre>
+<div class="block">Returns a comparator that has the reverse ordering of this comparator.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a comparator that has the reverse ordering of this comparator</dd>
 </dl>
 </li>
 </ul>
@@ -191,8 +501,8 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockList">
 <li class="blockList">
 <h4>thenComparing</h4>
-<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.37">thenComparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;other)</pre>
-<div class="block">Returns a composed comparator which tries <code>this</code> comparator, followed by the <code>other</code> comparator if this
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.191">thenComparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;other)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator, followed by the <code>other</code> comparator if this
  comparator returns a zero result.
  <p>
  The returned comparator is serializable if the specified comparator is also serializable.</div>
@@ -200,8 +510,110 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>other</code> - the other comparator to be used when <code>this</code> comparator determines that two objects are equal</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a composed comparator which tries <code>this</code> comparator, followed by the <code>other</code> comparator if this
+<dd>a composed comparator which uses <code>this</code> comparator, followed by the <code>other</code> comparator if this
          comparator returns a zero result</dd>
+</dl>
+</li>
+</ul>
+<a name="thenComparing-software.leonov.common.util.function.CheckedFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>thenComparing</h4>
+<pre>default&nbsp;&lt;U extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;? super U&gt;&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.209">thenComparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>,? extends U&gt;&nbsp;function)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified comparator is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+         specified function before comparing the results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="thenComparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>thenComparing</h4>
+<pre>default&nbsp;&lt;U&gt;&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.224">thenComparing</a>(<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>,? extends U&gt;&nbsp;function,
+                                               <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super U&gt;&nbsp;other)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before using the <code>other</code> comparator.
+ <p>
+ The returned comparator is serializable if the specified comparator is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dd><code>other</code> - the comparator to use after applying the function</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+         specified function before using the <code>other</code> comparator</dd>
+</dl>
+</li>
+</ul>
+<a name="thenComparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>thenComparingDouble</h4>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.238">thenComparingDouble</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToDoubleFunction.html" title="interface in software.leonov.common.util.function">CheckedToDoubleFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>double</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified comparator is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+         specified function before comparing the <code>double</code> results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="thenComparingInt-software.leonov.common.util.function.CheckedToIntFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>thenComparingInt</h4>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.252">thenComparingInt</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToIntFunction.html" title="interface in software.leonov.common.util.function">CheckedToIntFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>int</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified comparator is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+         specified function before comparing the <code>int</code> results according to their <i>natural ordering</i></dd>
+</dl>
+</li>
+</ul>
+<a name="thenComparingLong-software.leonov.common.util.function.CheckedToLongFunction-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>thenComparingLong</h4>
+<pre>default&nbsp;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.266">thenComparingLong</a>(<a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function">CheckedToLongFunction</a>&lt;? super <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="type parameter in CheckedComparator">T</a>&gt;&nbsp;function)</pre>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>long</code> results according to their <i>natural ordering</i>.
+ <p>
+ The returned comparator is serializable if the specified comparator is also serializable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>function</code> - the function to apply</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+         specified function before comparing the <code>long</code> results according to their <i>natural ordering</i></dd>
 </dl>
 </li>
 </ul>
@@ -211,7 +623,7 @@ public interface <a href="../../../../../src-html/software/leonov/common/util/fu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evalUnchecked</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.58">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedComparator.html#line.278">evalUnchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a>&lt;? super T&gt;&nbsp;comparator)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util"><code>Comparator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function"><code>CheckedComparator</code></a>,
  <code>rethrowing</code> any checked exceptions as if they were unchecked.</div>
 <dl>

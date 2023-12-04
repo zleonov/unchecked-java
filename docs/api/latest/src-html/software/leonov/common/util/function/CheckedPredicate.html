@@ -73,11 +73,11 @@
 <span class="sourceLineNo">065</span><a name="line.65"></a>
 <span class="sourceLineNo">066</span>    /**<a name="line.66"></a>
 <span class="sourceLineNo">067</span>     * Returns a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},<a name="line.67"></a>
-<span class="sourceLineNo">068</span>     * {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked.<a name="line.68"></a>
+<span class="sourceLineNo">068</span>     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.<a name="line.68"></a>
 <span class="sourceLineNo">069</span>     * <a name="line.69"></a>
 <span class="sourceLineNo">070</span>     * @param predicate the underlying checked predicate<a name="line.70"></a>
 <span class="sourceLineNo">071</span>     * @return a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},<a name="line.71"></a>
-<span class="sourceLineNo">072</span>     *         {@link Exceptions#uncheckedException(Throwable) rethrowing} any checked exceptions as if they were unchecked<a name="line.72"></a>
+<span class="sourceLineNo">072</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.72"></a>
 <span class="sourceLineNo">073</span>     */<a name="line.73"></a>
 <span class="sourceLineNo">074</span>    public static &lt;T&gt; Predicate&lt;T&gt; evalUnchecked(final CheckedPredicate&lt;? super T&gt; predicate) {<a name="line.74"></a>
 <span class="sourceLineNo">075</span>        Objects.requireNonNull(predicate, "predicate == null");<a name="line.75"></a>

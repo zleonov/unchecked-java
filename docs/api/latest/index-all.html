@@ -469,6 +469,31 @@
 <dd>
 <div class="block">Compares its two arguments for order.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#comparing-software.leonov.common.util.function.CheckedFunction-">comparing(CheckedFunction&lt;? super T, ? extends U&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the results
+ according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#comparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">comparing(CheckedFunction&lt;? super T, ? extends U&gt;, CheckedComparator&lt;? super U&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that uses the specified comparator to compare the results of applying the specified function to
+ each element of <code>type T</code>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#comparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">comparingDouble(CheckedToDoubleFunction&lt;? super T&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>double</code> results according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#comparingInt-software.leonov.common.util.function.CheckedToIntFunction-">comparingInt(CheckedToIntFunction&lt;? super T&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>int</code> results according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#comparingLong-software.leonov.common.util.function.CheckedToLongFunction-">comparingLong(CheckedToLongFunction&lt;? super T&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that applies the specified function to each element of <code>type T</code> and compares the
+ <code>long</code> results according to their <i>natural ordering</i>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedDoubleUnaryOperator.html#compose-software.leonov.common.util.function.CheckedDoubleUnaryOperator-">compose(CheckedDoubleUnaryOperator)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedDoubleUnaryOperator.html" title="interface in software.leonov.common.util.function">CheckedDoubleUnaryOperator</a></dt>
 <dd>
 <div class="block">Returns a composed operator that first applies the <code>before</code> operator to its input, and then applies this
@@ -740,7 +765,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedIntSupplier.html#getAsInt--">getAsInt()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedIntSupplier.html" title="interface in software.leonov.common.util.function">CheckedIntSupplier</a></dt>
 <dd>
-<div class="block">Returns a integer result.</div>
+<div class="block">Returns an integer result.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedLongSupplier.html#getAsLong--">getAsLong()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedLongSupplier.html" title="interface in software.leonov.common.util.function">CheckedLongSupplier</a></dt>
 <dd>
@@ -768,6 +793,10 @@
 </a>
 <h2 class="title">N</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#naturalOrder--">naturalOrder()</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that compares values according to their <i>natural ordering</i>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedBiPredicate.html#negate--">negate()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedBiPredicate.html" title="interface in software.leonov.common.util.function">CheckedBiPredicate</a></dt>
 <dd>
 <div class="block">Returns a predicate that represents the logical negation of this predicate.</div>
@@ -787,6 +816,14 @@
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedPredicate.html#negate--">negate()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedPredicate.html" title="interface in software.leonov.common.util.function">CheckedPredicate</a></dt>
 <dd>
 <div class="block">Returns a predicate that represents the logical negation of this predicate.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#nullsFirst-software.leonov.common.util.function.CheckedComparator-">nullsFirst(CheckedComparator&lt;? super T&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that considers <code>null</code> values to be less than non-<code>null</code> values.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#nullsLast-software.leonov.common.util.function.CheckedComparator-">nullsLast(CheckedComparator&lt;? super T&gt;)</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that considers <code>null</code> values to be greater than non-<code>null</code> values.</div>
 </dd>
 </dl>
 <a name="I:O">
@@ -820,6 +857,14 @@
 </a>
 <h2 class="title">R</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#reversed--">reversed()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that has the reverse ordering of this comparator.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#reverseOrder--">reverseOrder()</a></span> - Static method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a comparator that compares values according to the reverse of their <i>natural ordering</i>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedRunnable.html#run--">run()</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedRunnable.html" title="interface in software.leonov.common.util.function">CheckedRunnable</a></dt>
 <dd>
 <div class="block">The general contract of the method <code>run()</code> is that it may take any action whatsoever.</div>
@@ -832,7 +877,7 @@
 <dl>
 <dt><a href="software/leonov/common/util/function/package-summary.html">software.leonov.common.util.function</a> - package software.leonov.common.util.function</dt>
 <dd>
-<div class="block">Utilities and functional interfaces which ignore checked exceptions and provide target types for lambda expressions
+<div class="block">Functional interfaces and adapters which ignore checked exceptions and provide target types for lambda expressions
  and method references.</div>
 </dd>
 </dl>
@@ -863,8 +908,33 @@
 </dd>
 <dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedComparator-">thenComparing(CheckedComparator&lt;? super T&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
 <dd>
-<div class="block">Returns a composed comparator which tries <code>this</code> comparator, followed by the <code>other</code> comparator if this
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator, followed by the <code>other</code> comparator if this
  comparator returns a zero result.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedFunction-">thenComparing(CheckedFunction&lt;? super T, ? extends U&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the results according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparing-software.leonov.common.util.function.CheckedFunction-software.leonov.common.util.function.CheckedComparator-">thenComparing(CheckedFunction&lt;? super T, ? extends U&gt;, CheckedComparator&lt;? super U&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before using the <code>other</code> comparator.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparingDouble-software.leonov.common.util.function.CheckedToDoubleFunction-">thenComparingDouble(CheckedToDoubleFunction&lt;? super T&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>double</code> results according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparingInt-software.leonov.common.util.function.CheckedToIntFunction-">thenComparingInt(CheckedToIntFunction&lt;? super T&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>int</code> results according to their <i>natural ordering</i>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="software/leonov/common/util/function/CheckedComparator.html#thenComparingLong-software.leonov.common.util.function.CheckedToLongFunction-">thenComparingLong(CheckedToLongFunction&lt;? super T&gt;)</a></span> - Method in interface software.leonov.common.util.function.<a href="software/leonov/common/util/function/CheckedComparator.html" title="interface in software.leonov.common.util.function">CheckedComparator</a></dt>
+<dd>
+<div class="block">Returns a composed comparator which uses <code>this</code> comparator first, and if the result is zero, applies the
+ specified function before comparing the <code>long</code> results according to their <i>natural ordering</i>.</div>
 </dd>
 </dl>
 <a name="I:U">
