@@ -2,7 +2,7 @@ package software.leonov.common.util.function;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.truth.Truth.assertThat;
-import static software.leonov.common.util.function.CheckedComparator.evalUnchecked;
+import static software.leonov.common.util.function.CheckedComparator.unchecked;
 import static software.leonov.common.util.function.CheckedComparator.naturalOrder;
 import static software.leonov.common.util.function.CheckedComparator.nullsFirst;
 import static software.leonov.common.util.function.CheckedComparator.nullsLast;
@@ -37,7 +37,7 @@ class NullsTest {
     void test_nullsFirst_naturalOrder() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsFirst(naturalOrder())));
+        actual.sort(unchecked(nullsFirst(naturalOrder())));
 
         assertThat(actual).isEqualTo(newArrayList(null, null, "a", "b", "c", "d"));
     }
@@ -46,7 +46,7 @@ class NullsTest {
     void test_nullsFirst_naturalOrder_reversed() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsFirst(CheckedComparator.<String>naturalOrder()).reversed()));
+        actual.sort(unchecked(nullsFirst(CheckedComparator.<String>naturalOrder()).reversed()));
 
         assertThat(actual).isEqualTo(newArrayList("d", "c", "b", "a", null, null));
     }
@@ -55,7 +55,7 @@ class NullsTest {
     void test_nullsLast_naturalOrder() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsLast(naturalOrder())));
+        actual.sort(unchecked(nullsLast(naturalOrder())));
 
         assertThat(actual).isEqualTo(newArrayList("a", "b", "c", "d", null, null));
     }
@@ -64,7 +64,7 @@ class NullsTest {
     void test_nullsLast_naturalOrder_reversed() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsLast(CheckedComparator.<String>naturalOrder()).reversed()));
+        actual.sort(unchecked(nullsLast(CheckedComparator.<String>naturalOrder()).reversed()));
 
         assertThat(actual).isEqualTo(newArrayList(null, null, "d", "c", "b", "a"));
     }
@@ -73,7 +73,7 @@ class NullsTest {
     void test_nullsFirst_null() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsFirst(null)));
+        actual.sort(unchecked(nullsFirst(null)));
 
         assertThat(actual).isEqualTo(newArrayList(null, null, "b", "a", "d", "c"));
     }
@@ -82,7 +82,7 @@ class NullsTest {
     void test_nullsFirst_last() throws Exception {
         final List<String> actual = newArrayList("b", "a", null, "d", "c", null);
 
-        actual.sort(evalUnchecked(nullsLast(null)));
+        actual.sort(unchecked(nullsLast(null)));
 
         assertThat(actual).isEqualTo(newArrayList("b", "a", "d", "c", null, null));
     }
