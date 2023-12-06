@@ -94,7 +94,7 @@
 <span class="sourceLineNo">086</span>     * @return a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},<a name="line.86"></a>
 <span class="sourceLineNo">087</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.87"></a>
 <span class="sourceLineNo">088</span>     */<a name="line.88"></a>
-<span class="sourceLineNo">089</span>    public static &lt;T&gt; Predicate&lt;T&gt; evalUnchecked(final CheckedPredicate&lt;? super T&gt; predicate) {<a name="line.89"></a>
+<span class="sourceLineNo">089</span>    public static &lt;T&gt; Predicate&lt;T&gt; unchecked(final CheckedPredicate&lt;? super T&gt; predicate) {<a name="line.89"></a>
 <span class="sourceLineNo">090</span>        Objects.requireNonNull(predicate, "predicate == null");<a name="line.90"></a>
 <span class="sourceLineNo">091</span>        return t -&gt; {<a name="line.91"></a>
 <span class="sourceLineNo">092</span>            try {<a name="line.92"></a>

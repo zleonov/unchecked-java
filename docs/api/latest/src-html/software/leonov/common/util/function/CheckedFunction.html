@@ -83,7 +83,7 @@
 <span class="sourceLineNo">075</span>     * @return a {@link Function} which delegates to the underlying {@link CheckedFunction},<a name="line.75"></a>
 <span class="sourceLineNo">076</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.76"></a>
 <span class="sourceLineNo">077</span>     */<a name="line.77"></a>
-<span class="sourceLineNo">078</span>    public static &lt;T, R&gt; Function&lt;T, R&gt; evalUnchecked(final CheckedFunction&lt;? super T, ? extends R&gt; function) {<a name="line.78"></a>
+<span class="sourceLineNo">078</span>    public static &lt;T, R&gt; Function&lt;T, R&gt; unchecked(final CheckedFunction&lt;? super T, ? extends R&gt; function) {<a name="line.78"></a>
 <span class="sourceLineNo">079</span>        Objects.requireNonNull(function, "function == null");<a name="line.79"></a>
 <span class="sourceLineNo">080</span>        return t -&gt; {<a name="line.80"></a>
 <span class="sourceLineNo">081</span>            try {<a name="line.81"></a>

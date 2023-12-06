@@ -51,7 +51,7 @@
 <span class="sourceLineNo">043</span>     * @return an {@link IntFunction} which delegates to the underlying {@link CheckedIntFunction},<a name="line.43"></a>
 <span class="sourceLineNo">044</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.44"></a>
 <span class="sourceLineNo">045</span>     */<a name="line.45"></a>
-<span class="sourceLineNo">046</span>    public static &lt;R&gt; IntFunction&lt;R&gt; evalUnchecked(final CheckedIntFunction&lt;? extends R&gt; function) {<a name="line.46"></a>
+<span class="sourceLineNo">046</span>    public static &lt;R&gt; IntFunction&lt;R&gt; unchecked(final CheckedIntFunction&lt;? extends R&gt; function) {<a name="line.46"></a>
 <span class="sourceLineNo">047</span>        Objects.requireNonNull(function, "function == null");<a name="line.47"></a>
 <span class="sourceLineNo">048</span>        return d -&gt; {<a name="line.48"></a>
 <span class="sourceLineNo">049</span>            try {<a name="line.49"></a>

@@ -81,7 +81,7 @@
 <span class="sourceLineNo">073</span>     * @return an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},<a name="line.73"></a>
 <span class="sourceLineNo">074</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.74"></a>
 <span class="sourceLineNo">075</span>     */<a name="line.75"></a>
-<span class="sourceLineNo">076</span>    public static IntUnaryOperator evalUnchecked(final CheckedIntUnaryOperator operator) {<a name="line.76"></a>
+<span class="sourceLineNo">076</span>    public static IntUnaryOperator unchecked(final CheckedIntUnaryOperator operator) {<a name="line.76"></a>
 <span class="sourceLineNo">077</span>        Objects.requireNonNull(operator, "operator == null");<a name="line.77"></a>
 <span class="sourceLineNo">078</span>        return d -&gt; {<a name="line.78"></a>
 <span class="sourceLineNo">079</span>            try {<a name="line.79"></a>

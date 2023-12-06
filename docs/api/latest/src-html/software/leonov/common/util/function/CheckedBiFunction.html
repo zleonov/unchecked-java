@@ -65,7 +65,7 @@
 <span class="sourceLineNo">057</span>     * @return a {@link BiFunction} which delegates to the underlying {@link CheckedBiFunction},<a name="line.57"></a>
 <span class="sourceLineNo">058</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.58"></a>
 <span class="sourceLineNo">059</span>     */<a name="line.59"></a>
-<span class="sourceLineNo">060</span>    public static &lt;T, U, R&gt; BiFunction&lt;T, U, R&gt; evalUnchecked(final CheckedBiFunction&lt;? super T, ? super U, ? extends R&gt; function) {<a name="line.60"></a>
+<span class="sourceLineNo">060</span>    public static &lt;T, U, R&gt; BiFunction&lt;T, U, R&gt; unchecked(final CheckedBiFunction&lt;? super T, ? super U, ? extends R&gt; function) {<a name="line.60"></a>
 <span class="sourceLineNo">061</span>        Objects.requireNonNull(function, "function == null");<a name="line.61"></a>
 <span class="sourceLineNo">062</span>        return (t, u) -&gt; {<a name="line.62"></a>
 <span class="sourceLineNo">063</span>            try {<a name="line.63"></a>

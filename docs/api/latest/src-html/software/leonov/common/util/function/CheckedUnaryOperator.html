@@ -42,7 +42,7 @@
 <span class="sourceLineNo">034</span>     * @return a {@link UnaryOperator} which delegates to the underlying {@link CheckedUnaryOperator},<a name="line.34"></a>
 <span class="sourceLineNo">035</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.35"></a>
 <span class="sourceLineNo">036</span>     */<a name="line.36"></a>
-<span class="sourceLineNo">037</span>    public static &lt;T&gt; UnaryOperator&lt;T&gt; evalUnchecked(final CheckedUnaryOperator&lt;T&gt; operator) {<a name="line.37"></a>
+<span class="sourceLineNo">037</span>    public static &lt;T&gt; UnaryOperator&lt;T&gt; unchecked(final CheckedUnaryOperator&lt;T&gt; operator) {<a name="line.37"></a>
 <span class="sourceLineNo">038</span>        Objects.requireNonNull(operator, "operator == null");<a name="line.38"></a>
 <span class="sourceLineNo">039</span>        return t -&gt; {<a name="line.39"></a>
 <span class="sourceLineNo">040</span>            try {<a name="line.40"></a>

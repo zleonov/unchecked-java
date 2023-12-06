@@ -66,7 +66,7 @@
 <span class="sourceLineNo">058</span>     * @return a {@link Consumer} which delegates to the underlying {@link CheckedConsumer},<a name="line.58"></a>
 <span class="sourceLineNo">059</span>     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked<a name="line.59"></a>
 <span class="sourceLineNo">060</span>     */<a name="line.60"></a>
-<span class="sourceLineNo">061</span>    public static &lt;T&gt; Consumer&lt;T&gt; evalUnchecked(final CheckedConsumer&lt;? super T&gt; consumer) {<a name="line.61"></a>
+<span class="sourceLineNo">061</span>    public static &lt;T&gt; Consumer&lt;T&gt; unchecked(final CheckedConsumer&lt;? super T&gt; consumer) {<a name="line.61"></a>
 <span class="sourceLineNo">062</span>        Objects.requireNonNull(consumer, "consumer == null");<a name="line.62"></a>
 <span class="sourceLineNo">063</span>        return t -&gt; {<a name="line.63"></a>
 <span class="sourceLineNo">064</span>            try {<a name="line.64"></a>
