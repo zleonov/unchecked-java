@@ -1,6 +1,6 @@
 Unchecked Java
 ===============
-Java Streams and lambda expressions that are free from checked-exceptions side effects.
+Java Streams and lambda expressions that are free from checked exceptions side effects.
 
 Overview
 --------
@@ -25,21 +25,15 @@ Stream.of("https://www.google.com").map(t -> {
 });
 ```
 
-Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a `RuntimeException` which adds unnecessary bloat to the stack trace. Using **Unchecked Java** we can again write concise code afforded to us by lambda expressions, without wrapping checked exceptions in runtime exceptions:
+Besides the extra boiler-plate code, we are also required to obfuscate the original exception by wrapping it in a `RuntimeException` which adds unnecessary bloat to the stack trace. Using Unchecked Java we can again write concise code afforded to us by lambda expressions, without wrapping checked exceptions in runtime exceptions:
 
 ```java
 import static software.leonov.common.util.function.CheckedFunction.evalUnchecked;
 ...
-Stream.of("https://www.google.com").map(evalUnchecked(URL::new));
+Stream.of("https://www.google.com").map(unchecked(URL::new));
 ```
 
-Goals
------
-- Variants of all [Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) in [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) which can throw checked exceptions (including support for all higher-order functions)
-- Adapter methods to view all checked variants as unchecked
-- Java 8 or higher
-- **No dependencies** (other than the JDK)
-- And more...
+**Please refer to the [Wiki](https://github.com/zleonov/unchecked-java/wiki) for details, specifications, API examples, and FAQ.**
 
 Documentation
 -------------
@@ -47,21 +41,13 @@ The latest API documentation can be accessed [here](https://zleonov.github.io/un
 
 WARNING
 =======
-**Unchecked Java** bypasses Java's exception handling idiom and can lead to horrible errors when misused.
+Unchecked Java circumvents Java's exception handling mechanisms and can lead to horrible, often very hard to debug errors, when misused.
 
 As Brian Goetz (Java Language Architect) put it:
 
 > Just because you don’t like the rules, doesn’t mean its a good idea to take the law into your own hands. Your advice is irresponsible because it places the convenience of the code writer over the far more important considerations of transparency and maintainability of the program.
 
-
-It is only safe to use if you ensure the caller will catch all possible checked exceptions that could occur. If in doubt <b>do not use</b>.
-
-For further discussion see:
-
-[https://stackoverflow.com/questions/18198176](https://stackoverflow.com/questions/18198176)  
-[https://stackoverflow.com/questions/19757300](https://stackoverflow.com/questions/19757300)  
-[https://stackoverflow.com/questions/14039995](https://stackoverflow.com/questions/14039995)  
-[Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+**Please refer to the [Safety Guide](https://github.com/zleonov/unchecked-java/wiki/Safety-Guide) before using Unchecked Java**.
 
 Similar Libraries
 -----------------
