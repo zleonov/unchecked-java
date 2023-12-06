@@ -59,7 +59,7 @@ public interface CheckedBiConsumer<T, U> {
      * @return a {@link BiConsumer} which delegates to the underlying {@link CheckedBiConsumer},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U> BiConsumer<T, U> evalUnchecked(final CheckedBiConsumer<? super T, ? super U> consumer) {
+    public static <T, U> BiConsumer<T, U> unchecked(final CheckedBiConsumer<? super T, ? super U> consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
         return (t, u) -> {
             try {

@@ -87,7 +87,7 @@ public interface CheckedBiPredicate<T, U> {
      * @return a {@link BiPredicate} which delegates to the underlying {@link CheckedBiPredicate},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U> BiPredicate<T, U> evalUnchecked(final CheckedBiPredicate<? super T, ? super U> predicate) {
+    public static <T, U> BiPredicate<T, U> unchecked(final CheckedBiPredicate<? super T, ? super U> predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
         return (t, u) -> {
             try {

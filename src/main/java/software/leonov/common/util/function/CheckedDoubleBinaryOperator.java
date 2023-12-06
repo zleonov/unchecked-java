@@ -45,7 +45,7 @@ public interface CheckedDoubleBinaryOperator {
      * @return a {@link DoubleBinaryOperator} which delegates to the underlying {@link CheckedDoubleBinaryOperator},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoubleBinaryOperator evalUnchecked(final CheckedDoubleBinaryOperator operator) {
+    public static DoubleBinaryOperator unchecked(final CheckedDoubleBinaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return (l, r) -> {
             try {

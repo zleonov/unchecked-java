@@ -57,7 +57,7 @@ public interface CheckedBiFunction<T, U, R> {
      * @return a {@link BiFunction} which delegates to the underlying {@link CheckedBiFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U, R> BiFunction<T, U, R> evalUnchecked(final CheckedBiFunction<? super T, ? super U, ? extends R> function) {
+    public static <T, U, R> BiFunction<T, U, R> unchecked(final CheckedBiFunction<? super T, ? super U, ? extends R> function) {
         Objects.requireNonNull(function, "function == null");
         return (t, u) -> {
             try {

@@ -34,7 +34,7 @@ public interface CheckedUnaryOperator<T> extends CheckedFunction<T, T> {
      * @return a {@link UnaryOperator} which delegates to the underlying {@link CheckedUnaryOperator},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> UnaryOperator<T> evalUnchecked(final CheckedUnaryOperator<T> operator) {
+    public static <T> UnaryOperator<T> unchecked(final CheckedUnaryOperator<T> operator) {
         Objects.requireNonNull(operator, "operator == null");
         return t -> {
             try {

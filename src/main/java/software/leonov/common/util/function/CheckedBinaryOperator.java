@@ -60,7 +60,7 @@ public interface CheckedBinaryOperator<T> extends CheckedBiFunction<T, T, T> {
      * @return a {@link BinaryOperator} which delegates to the underlying {@link CheckedBinaryOperator},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T> BinaryOperator<T> evalUnchecked(final CheckedBinaryOperator<T> operator) {
+    public static <T> BinaryOperator<T> unchecked(final CheckedBinaryOperator<T> operator) {
         Objects.requireNonNull(operator, "operator == null");
         return (t, u) -> {
             try {

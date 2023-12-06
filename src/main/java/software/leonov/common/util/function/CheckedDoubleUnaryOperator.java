@@ -74,7 +74,7 @@ public interface CheckedDoubleUnaryOperator {
      * @return a {@link DoubleUnaryOperator} which delegates to the underlying {@link CheckedDoubleUnaryOperator},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoubleUnaryOperator evalUnchecked(final CheckedDoubleUnaryOperator operator) {
+    public static DoubleUnaryOperator unchecked(final CheckedDoubleUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
         return d -> {
             try {

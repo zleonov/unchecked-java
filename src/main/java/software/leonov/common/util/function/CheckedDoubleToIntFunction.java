@@ -43,7 +43,7 @@ public interface CheckedDoubleToIntFunction {
      * @return a {@link DoubleToIntFunction} which delegates to the underlying {@link CheckedDoubleToIntFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoubleToIntFunction evalUnchecked(final CheckedDoubleToIntFunction function) {
+    public static DoubleToIntFunction unchecked(final CheckedDoubleToIntFunction function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

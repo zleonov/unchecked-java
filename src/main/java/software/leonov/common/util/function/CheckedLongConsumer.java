@@ -60,7 +60,7 @@ public interface CheckedLongConsumer {
      * @return a {@link LongConsumer} which delegates to the underlying {@link CheckedLongConsumer},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongConsumer evalUnchecked(final CheckedLongConsumer consumer) {
+    public static LongConsumer unchecked(final CheckedLongConsumer consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
         return t -> {
             try {

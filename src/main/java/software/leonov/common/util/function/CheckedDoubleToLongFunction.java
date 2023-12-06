@@ -44,7 +44,7 @@ public interface CheckedDoubleToLongFunction {
      * @return a {@link DoubleToLongFunction} which delegates to the underlying {@link CheckedDoubleToLongFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static DoubleToLongFunction evalUnchecked(final CheckedDoubleToLongFunction function) {
+    public static DoubleToLongFunction unchecked(final CheckedDoubleToLongFunction function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

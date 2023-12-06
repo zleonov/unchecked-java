@@ -60,7 +60,7 @@ public interface CheckedIntConsumer {
      * @return an {@link IntConsumer} which delegates to the underlying {@link CheckedIntConsumer},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static IntConsumer evalUnchecked(final CheckedIntConsumer consumer) {
+    public static IntConsumer unchecked(final CheckedIntConsumer consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
         return t -> {
             try {

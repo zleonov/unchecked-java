@@ -45,7 +45,7 @@ public interface CheckedToLongBiFunction<T, U> {
      * @return a {@link ToLongBiFunction} which delegates to the underlying {@link CheckedToLongBiFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U> ToLongBiFunction<T, U> evalUnchecked(final CheckedToLongBiFunction<? super T, ? super U> function) {
+    public static <T, U> ToLongBiFunction<T, U> unchecked(final CheckedToLongBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
         return (t, u) -> {
             try {

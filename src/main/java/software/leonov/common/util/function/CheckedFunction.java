@@ -75,7 +75,7 @@ public interface CheckedFunction<T, R> {
      * @return a {@link Function} which delegates to the underlying {@link CheckedFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, R> Function<T, R> evalUnchecked(final CheckedFunction<? super T, ? extends R> function) {
+    public static <T, R> Function<T, R> unchecked(final CheckedFunction<? super T, ? extends R> function) {
         Objects.requireNonNull(function, "function == null");
         return t -> {
             try {

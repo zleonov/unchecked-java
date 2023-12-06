@@ -43,7 +43,7 @@ public interface CheckedLongToIntFunction {
      * @return a {@link LongToIntFunction} which delegates to the underlying {@link CheckedLongToIntFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static LongToIntFunction evalUnchecked(final CheckedLongToIntFunction function) {
+    public static LongToIntFunction unchecked(final CheckedLongToIntFunction function) {
         Objects.requireNonNull(function, "function == null");
         return d -> {
             try {

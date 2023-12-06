@@ -44,7 +44,7 @@ public interface CheckedToIntBiFunction<T, U> {
      * @return a {@link ToIntBiFunction} which delegates to the underlying {@link CheckedToIntBiFunction},
      *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
-    public static <T, U> ToIntBiFunction<T, U> evalUnchecked(final CheckedToIntBiFunction<? super T, ? super U> function) {
+    public static <T, U> ToIntBiFunction<T, U> unchecked(final CheckedToIntBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
         return (t, u) -> {
             try {
