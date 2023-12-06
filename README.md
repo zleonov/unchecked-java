@@ -33,10 +33,10 @@ import static software.leonov.common.util.function.CheckedFunction.evalUnchecked
 Stream.of("https://www.google.com").map(unchecked(URL::new));
 ```
 
-**Please refer to the [Wiki](https://github.com/zleonov/unchecked-java/wiki) for details, specifications, API examples, and FAQ.**
-
 Documentation
 -------------
+Please refer to the [Wiki](https://github.com/zleonov/unchecked-java/wiki) for details, specifications, API examples, and FAQ.
+
 The latest API documentation can be accessed [here](https://zleonov.github.io/unchecked-java/api/latest).
 
 WARNING
