@@ -22,35 +22,35 @@ import java.util.Objects;
  * 
  * @author Zhenya Leonov
  */
-final class Exceptions {
+public final class Exceptions {
 
     private Exceptions() {
     }
 
     /**
-     * Propagates the specified {@code Exception} as if it is always an instance of {@code RuntimeException} without
-     * wrapping it in a {@code RuntimeException}.
+     * Propagates the specified {@code Exception} as if it is an instance of {@code RuntimeException} without the additional
+     * bloat to the stack trace which would result from wrapping it in a {@code RuntimeException}.
      * <p>
      * For example:
      * 
      * <pre>
-     * T doSomething() { // does not throw a checked exception
-     *     try {
-     *         return someMethodThatCouldThrowAnything();
-     *     } catch (final IKnowWhatToDoWithThisException e) {
-     *         ...
-     *     } catch (final Exception e) {
-     *         throw uncheckedException(e);
-     *     }
+     * try {
+     *     return someMethodThatCouldThrowAnything();
+     * } catch (final IKnowWhatToDoWithThisException e) {
+     *     ...
+     * } catch (final Exception e) {
+     *     throw uncheckedException(e); // propagate without wrapping in a RuntimeException 
      * }
      * </pre>
      * 
-     * <b>Warning:</b> This method breaks Java's exception handling idiom and can lead to horrible errors when misused. See
-     * <a target="_blank" href="https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html">Unchecked
-     * Exceptions — The Controversy</a> for further discussion. It is only safe to use if you ensure the caller will catch
-     * all possible checked exceptions that could occur. If in doubt <b>do not use</b>.
+     * <b>Warning:</b> This method circumvents Java's exception handling mechanism and can lead to horrible errors when
+     * misused. It is explicitly designed for cases where you are sure the caller will handle all possible exceptions thrown
+     * by this method. See Unchecked Java's
+     * <a target="_blank" href="https://github.com/zleonov/unchecked-java/wiki/Safety-Guide">Safety Guide</a> before using
+     * this method. If in doubt <b>do not use</b>.
      * 
-     * @param e the specified throwable
+     * @param <E> the type of exception to rethrow as unchecked
+     * @param e   the specified exception
      * @return this method does not return - the return type is only for your convenience to make the compiler happy
      * @throws E always as an unchecked exception
      */
