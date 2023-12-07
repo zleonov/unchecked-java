@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
 
@@ -36,11 +34,11 @@ public interface CheckedBooleanSupplier {
 
     /**
      * Returns a {@link BooleanSupplier} which delegates to the underlying {@link CheckedBooleanSupplier},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the underlying checked supplier of boolean values
      * @return a {@link BooleanSupplier} which delegates to the underlying {@link CheckedBooleanSupplier},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static BooleanSupplier unchecked(final CheckedBooleanSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
@@ -48,18 +46,18 @@ public interface CheckedBooleanSupplier {
             try {
                 return supplier.getAsBoolean();
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }
 
     /**
      * Returns the result of calling {@link #getAsBoolean()} on the specified {@code CheckedBooleanSupplier}
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the specified checked supplier of boolean values
      * @return the result of calling {@link #getAsBoolean()} on the specified {@code CheckedBooleanSupplier}
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static boolean uncheckedGet(final CheckedBooleanSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");

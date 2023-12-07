@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.LongSupplier;
 
@@ -36,11 +34,11 @@ public interface CheckedLongSupplier {
 
     /**
      * Returns a {@link LongSupplier} which delegates to the underlying {@link CheckedLongSupplier},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the underlying checked long-supplier
      * @return a {@link LongSupplier} which delegates to the underlying {@link CheckedLongSupplier},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static LongSupplier unchecked(final CheckedLongSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
@@ -48,18 +46,18 @@ public interface CheckedLongSupplier {
             try {
                 return supplier.getAsLong();
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }
 
     /**
      * Returns the result of calling {@link #getAsLong()} on the specified {@code CheckedLongSupplier}
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the specified checked supplier
      * @return the result of calling {@link #getAsLong()} on the specified {@code CheckedSupplier}
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static long uncheckedGet(final CheckedLongSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");

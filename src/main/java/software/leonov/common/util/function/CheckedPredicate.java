@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.Predicate;
 
@@ -80,11 +78,11 @@ public interface CheckedPredicate<T> {
 
     /**
      * Returns a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param predicate the underlying checked predicate
      * @return a {@link Predicate} which delegates to the underlying {@link CheckedPredicate},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> Predicate<T> unchecked(final CheckedPredicate<? super T> predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
@@ -92,7 +90,7 @@ public interface CheckedPredicate<T> {
             try {
                 return predicate.test(t);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.ObjLongConsumer;
 
@@ -37,11 +35,11 @@ public interface CheckedObjLongConsumer<T> {
 
     /**
      * Returns an {@link ObjLongConsumer} which delegates to the underlying {@link CheckedObjLongConsumer},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param consumer the underlying checked consumer
      * @return an {@link ObjLongConsumer} which delegates to the underlying {@link CheckedObjLongConsumer},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> ObjLongConsumer<T> unchecked(final CheckedObjLongConsumer<? super T> consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
@@ -49,7 +47,7 @@ public interface CheckedObjLongConsumer<T> {
             try {
                 consumer.accept(t, l);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

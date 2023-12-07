@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.BinaryOperator;
 
@@ -54,11 +52,11 @@ public interface CheckedBinaryOperator<T> extends CheckedBiFunction<T, T, T> {
 
     /**
      * Returns a {@link BinaryOperator} which delegates to the underlying {@link CheckedBinaryOperator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return a {@link BinaryOperator} which delegates to the underlying {@link CheckedBinaryOperator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> BinaryOperator<T> unchecked(final CheckedBinaryOperator<T> operator) {
         Objects.requireNonNull(operator, "operator == null");
@@ -66,7 +64,7 @@ public interface CheckedBinaryOperator<T> extends CheckedBiFunction<T, T, T> {
             try {
                 return operator.apply(t, u);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

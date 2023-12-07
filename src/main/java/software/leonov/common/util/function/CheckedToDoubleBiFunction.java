@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.ToDoubleBiFunction;
 
@@ -39,11 +37,11 @@ public interface CheckedToDoubleBiFunction<T, U> {
 
     /**
      * Returns a {@link ToDoubleBiFunction} which delegates to the underlying {@link CheckedToDoubleBiFunction},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param function the underlying checked function
      * @return a {@link ToDoubleBiFunction} which delegates to the underlying {@link CheckedToDoubleBiFunction},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T, U> ToDoubleBiFunction<T, U> unchecked(final CheckedToDoubleBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
@@ -51,7 +49,7 @@ public interface CheckedToDoubleBiFunction<T, U> {
             try {
                 return function.applyAsDouble(t, u);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.LongPredicate;
 
@@ -81,11 +79,11 @@ public interface CheckedLongPredicate {
 
     /**
      * Returns a {@link LongPredicate} which delegates to the underlying {@link CheckedLongPredicate},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param predicate the underlying checked predicate
      * @return a {@link LongPredicate} which delegates to the underlying {@link CheckedLongPredicate},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static LongPredicate unchecked(final CheckedLongPredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
@@ -93,7 +91,7 @@ public interface CheckedLongPredicate {
             try {
                 return predicate.test(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

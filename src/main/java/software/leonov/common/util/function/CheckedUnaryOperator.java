@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.UnaryOperator;
 
@@ -28,11 +26,11 @@ public interface CheckedUnaryOperator<T> extends CheckedFunction<T, T> {
 
     /**
      * Returns a {@link UnaryOperator} which delegates to the underlying {@link CheckedUnaryOperator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return a {@link UnaryOperator} which delegates to the underlying {@link CheckedUnaryOperator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> UnaryOperator<T> unchecked(final CheckedUnaryOperator<T> operator) {
         Objects.requireNonNull(operator, "operator == null");
@@ -40,7 +38,7 @@ public interface CheckedUnaryOperator<T> extends CheckedFunction<T, T> {
             try {
                 return operator.apply(t);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

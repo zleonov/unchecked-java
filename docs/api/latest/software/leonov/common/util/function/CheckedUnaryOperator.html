@@ -49,7 +49,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../software/leonov/common/util/function/Exceptions.html" title="class in software.leonov.common.util.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../software/leonov/common/util/function/Unchecked.html" title="class in software.leonov.common.util.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?software/leonov/common/util/function/CheckedUnaryOperator.html" target="_top">Frames</a></li>
@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html?is-external=true" title="class or interface in java.lang">@FunctionalInterface</a>
-public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedUnaryOperator.html#line.27">CheckedUnaryOperator</a>&lt;T&gt;
+public interface <a href="../../../../../src-html/software/leonov/common/util/function/CheckedUnaryOperator.html#line.25">CheckedUnaryOperator</a>&lt;T&gt;
 extends <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a>&lt;T,T&gt;</pre>
 <div class="block">Mirror of the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>UnaryOperator</code></a> interface whose <code>apply(T)</code> method can throw a checked exception.</div>
 </li>
@@ -134,7 +134,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedFunc
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function">UnaryOperator</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html#unchecked-software.leonov.common.util.function.CheckedUnaryOperator-">unchecked</a></span>(<a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function">CheckedUnaryOperator</a>&lt;T&gt;&nbsp;operator)</code>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>UnaryOperator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedUnaryOperator</code></a>,
- <a href="../../../../../software/leonov/common/util/function/Exceptions.html#uncheckedException-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked.</div>
+ <a href="../../../../../software/leonov/common/util/function/Unchecked.html#exception-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked.</div>
 </td>
 </tr>
 </table>
@@ -143,7 +143,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedFunc
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;software.leonov.common.util.function.<a href="../../../../../software/leonov/common/util/function/CheckedFunction.html" title="interface in software.leonov.common.util.function">CheckedFunction</a></h3>
-<code><a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#andThen-software.leonov.common.util.function.CheckedFunction-">andThen</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#apply-T-">apply</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#compose-software.leonov.common.util.function.CheckedFunction-">compose</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#unchecked-software.leonov.common.util.function.CheckedFunction-">unchecked</a></code></li>
+<code><a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#andThen-software.leonov.common.util.function.CheckedFunction-">andThen</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#apply-T-">apply</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#compose-software.leonov.common.util.function.CheckedFunction-">compose</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#identity--">identity</a>, <a href="../../../../../software/leonov/common/util/function/CheckedFunction.html#unchecked-software.leonov.common.util.function.CheckedFunction-">unchecked</a></code></li>
 </ul>
 </li>
 </ul>
@@ -165,15 +165,15 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedFunc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>unchecked</h4>
-<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedUnaryOperator.html#line.37">unchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function">CheckedUnaryOperator</a>&lt;T&gt;&nbsp;operator)</pre>
+<pre>static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;<a href="../../../../../src-html/software/leonov/common/util/function/CheckedUnaryOperator.html#line.35">unchecked</a>(<a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function">CheckedUnaryOperator</a>&lt;T&gt;&nbsp;operator)</pre>
 <div class="block">Returns a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>UnaryOperator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedUnaryOperator</code></a>,
- <a href="../../../../../software/leonov/common/util/function/Exceptions.html#uncheckedException-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked.</div>
+ <a href="../../../../../software/leonov/common/util/function/Unchecked.html#exception-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>operator</code> - the underlying checked operator</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>UnaryOperator</code></a> which delegates to the underlying <a href="../../../../../software/leonov/common/util/function/CheckedUnaryOperator.html" title="interface in software.leonov.common.util.function"><code>CheckedUnaryOperator</code></a>,
-         <a href="../../../../../software/leonov/common/util/function/Exceptions.html#uncheckedException-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked</dd>
+         <a href="../../../../../software/leonov/common/util/function/Unchecked.html#exception-java.lang.Exception-"><code>rethrowing</code></a> any checked exceptions as if they were unchecked</dd>
 </dl>
 </li>
 </ul>
@@ -205,7 +205,7 @@ extends <a href="../../../../../software/leonov/common/util/function/CheckedFunc
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../software/leonov/common/util/function/CheckedToLongFunction.html" title="interface in software.leonov.common.util.function"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../software/leonov/common/util/function/Exceptions.html" title="class in software.leonov.common.util.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../software/leonov/common/util/function/Unchecked.html" title="class in software.leonov.common.util.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?software/leonov/common/util/function/CheckedUnaryOperator.html" target="_top">Frames</a></li>

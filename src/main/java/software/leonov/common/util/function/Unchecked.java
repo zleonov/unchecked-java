@@ -18,18 +18,18 @@ package software.leonov.common.util.function;
 import java.util.Objects;
 
 /**
- * Static utility methods for working with {@link Exception}s.
+ * Static utility methods which circumvent Java's exception handling and treat {@link Exception}s as runtime errors.
  * 
  * @author Zhenya Leonov
  */
-public final class Exceptions {
+public final class Unchecked {
 
-    private Exceptions() {
+    private Unchecked() {
     }
 
     /**
-     * Propagates the specified {@code Exception} as if it is an instance of {@code RuntimeException} without the additional
-     * bloat to the stack trace which would result from wrapping it in a {@code RuntimeException}.
+     * Propagates the specified {@code Exception} as if it is an instance of {@code RuntimeException} without the adding
+     * bloat to the stack trace.
      * <p>
      * For example:
      * 
@@ -39,7 +39,7 @@ public final class Exceptions {
      * } catch (final IKnowWhatToDoWithThisException e) {
      *     ...
      * } catch (final Exception e) {
-     *     throw uncheckedException(e); // propagate without wrapping in a RuntimeException 
+     *     throw Unchecked.exception(e); // propagate without wrapping in a RuntimeException 
      * }
      * </pre>
      * 
@@ -55,7 +55,7 @@ public final class Exceptions {
      * @throws E always as an unchecked exception
      */
     @SuppressWarnings("unchecked")
-    public static <E extends Exception> RuntimeException uncheckedException(final Exception e) throws E {
+    public static <E extends Exception> RuntimeException exception(final Exception e) throws E {
         Objects.requireNonNull(e, "e == null");
         throw (E) e;
     }

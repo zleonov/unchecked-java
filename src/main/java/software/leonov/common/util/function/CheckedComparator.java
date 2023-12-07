@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Objects;
@@ -284,11 +282,11 @@ public interface CheckedComparator<T> {
 
     /**
      * Returns a {@link Comparator} which delegates to the underlying {@link CheckedComparator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param comparator the specified checked comparator
      * @return a {@link Comparator} which delegates to the underlying {@link CheckedComparator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> Comparator<T> unchecked(final CheckedComparator<? super T> comparator) {
         Objects.requireNonNull(comparator, "comparator == null");
@@ -296,7 +294,7 @@ public interface CheckedComparator<T> {
             try {
                 return comparator.compare(left, right);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

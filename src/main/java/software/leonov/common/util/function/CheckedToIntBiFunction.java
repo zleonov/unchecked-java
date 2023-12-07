@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.ToIntBiFunction;
 
@@ -38,11 +36,11 @@ public interface CheckedToIntBiFunction<T, U> {
 
     /**
      * Returns a {@link ToIntBiFunction} which delegates to the underlying {@link CheckedToIntBiFunction},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param function the underlying checked function
      * @return a {@link ToIntBiFunction} which delegates to the underlying {@link CheckedToIntBiFunction},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T, U> ToIntBiFunction<T, U> unchecked(final CheckedToIntBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
@@ -50,7 +48,7 @@ public interface CheckedToIntBiFunction<T, U> {
             try {
                 return function.applyAsInt(t, u);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

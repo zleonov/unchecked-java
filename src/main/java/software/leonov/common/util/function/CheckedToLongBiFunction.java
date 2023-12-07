@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.ToLongBiFunction;
 
@@ -39,11 +37,11 @@ public interface CheckedToLongBiFunction<T, U> {
 
     /**
      * Returns a {@link ToLongBiFunction} which delegates to the underlying {@link CheckedToLongBiFunction},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param function the underlying checked function
      * @return a {@link ToLongBiFunction} which delegates to the underlying {@link CheckedToLongBiFunction},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T, U> ToLongBiFunction<T, U> unchecked(final CheckedToLongBiFunction<? super T, ? super U> function) {
         Objects.requireNonNull(function, "function == null");
@@ -51,7 +49,7 @@ public interface CheckedToLongBiFunction<T, U> {
             try {
                 return function.applyAsLong(t, u);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

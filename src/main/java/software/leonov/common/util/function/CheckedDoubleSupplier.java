@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.DoubleSupplier;
 
@@ -36,11 +34,11 @@ public interface CheckedDoubleSupplier {
 
     /**
      * Returns a {@link DoubleSupplier} which delegates to the underlying {@link CheckedDoubleSupplier},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the underlying checked double-supplier
      * @return a {@link DoubleSupplier} which delegates to the underlying {@link CheckedDoubleSupplier},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static DoubleSupplier unchecked(final CheckedDoubleSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");
@@ -48,18 +46,18 @@ public interface CheckedDoubleSupplier {
             try {
                 return supplier.getAsDouble();
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }
 
     /**
      * Returns the result of calling {@link #getAsDouble()} on the specified {@code CheckedDoubleSupplier}
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param supplier the specified checked supplier
      * @return the result of calling {@link #getAsDouble()} on the specified {@code CheckedSupplier}
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static double uncheckedGet(final CheckedDoubleSupplier supplier) {
         Objects.requireNonNull(supplier, "supplier == null");

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.IntPredicate;
 
@@ -80,11 +78,11 @@ public interface CheckedIntPredicate {
 
     /**
      * Returns an {@link IntPredicate} which delegates to the underlying {@link CheckedIntPredicate},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param predicate the underlying checked predicate
      * @return an {@link IntPredicate} which delegates to the underlying {@link CheckedIntPredicate},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static IntPredicate unchecked(final CheckedIntPredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
@@ -92,7 +90,7 @@ public interface CheckedIntPredicate {
             try {
                 return predicate.test(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.BiFunction;
 
@@ -51,11 +49,11 @@ public interface CheckedBiFunction<T, U, R> {
 
     /**
      * Returns a {@link BiFunction} which delegates to the underlying {@link CheckedBiFunction},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param function the underlying checked function
      * @return a {@link BiFunction} which delegates to the underlying {@link CheckedBiFunction},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T, U, R> BiFunction<T, U, R> unchecked(final CheckedBiFunction<? super T, ? super U, ? extends R> function) {
         Objects.requireNonNull(function, "function == null");
@@ -63,7 +61,7 @@ public interface CheckedBiFunction<T, U, R> {
             try {
                 return function.apply(t, u);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 
 /**
@@ -34,11 +32,11 @@ public interface CheckedRunnable {
 
     /**
      * Returns a {@link Runnable} which delegates to the underlying {@link CheckedRunnable},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param runnable the underlying checked runnable
      * @return a {@link Runnable} which delegates to the underlying {@link CheckedRunnable},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static Runnable unchecked(final CheckedRunnable runnable) {
         Objects.requireNonNull(runnable, "runnable == null");
@@ -46,7 +44,7 @@ public interface CheckedRunnable {
             try {
                 runnable.run();
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.ObjDoubleConsumer;
 
@@ -38,11 +36,11 @@ public interface CheckedObjDoubleConsumer<T> {
 
     /**
      * Returns an {@link ObjDoubleConsumer} which delegates to the underlying {@link CheckedObjDoubleConsumer},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param consumer the underlying checked consumer
      * @return an {@link ObjDoubleConsumer} which delegates to the underlying {@link CheckedObjDoubleConsumer},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <T> ObjDoubleConsumer<T> unchecked(final CheckedObjDoubleConsumer<? super T> consumer) {
         Objects.requireNonNull(consumer, "consumer == null");
@@ -50,7 +48,7 @@ public interface CheckedObjDoubleConsumer<T> {
             try {
                 consumer.accept(t, d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

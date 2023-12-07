@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.DoubleUnaryOperator;
 
@@ -68,11 +66,11 @@ public interface CheckedDoubleUnaryOperator {
 
     /**
      * Returns a {@link DoubleUnaryOperator} which delegates to the underlying {@link CheckedDoubleUnaryOperator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return a {@link DoubleUnaryOperator} which delegates to the underlying {@link CheckedDoubleUnaryOperator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static DoubleUnaryOperator unchecked(final CheckedDoubleUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
@@ -80,7 +78,7 @@ public interface CheckedDoubleUnaryOperator {
             try {
                 return operator.applyAsDouble(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

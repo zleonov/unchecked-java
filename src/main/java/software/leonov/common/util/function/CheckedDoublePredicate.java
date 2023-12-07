@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.DoublePredicate;
 
@@ -81,11 +79,11 @@ public interface CheckedDoublePredicate {
 
     /**
      * Returns a {@link DoublePredicate} which delegates to the underlying {@link CheckedDoublePredicate},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param predicate the underlying checked predicate
      * @return a {@link DoublePredicate} which delegates to the underlying {@link CheckedDoublePredicate},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static DoublePredicate unchecked(final CheckedDoublePredicate predicate) {
         Objects.requireNonNull(predicate, "predicate == null");
@@ -93,7 +91,7 @@ public interface CheckedDoublePredicate {
             try {
                 return predicate.test(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

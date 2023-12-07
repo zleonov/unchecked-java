@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.IntFunction;
 
@@ -37,11 +35,11 @@ public interface CheckedIntFunction<R> {
 
     /**
      * Returns an {@link IntFunction} which delegates to the underlying {@link CheckedIntFunction},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param function the underlying checked function
      * @return an {@link IntFunction} which delegates to the underlying {@link CheckedIntFunction},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static <R> IntFunction<R> unchecked(final CheckedIntFunction<? extends R> function) {
         Objects.requireNonNull(function, "function == null");
@@ -49,7 +47,7 @@ public interface CheckedIntFunction<R> {
             try {
                 return function.apply(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

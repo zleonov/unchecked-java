@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.IntUnaryOperator;
 
@@ -67,11 +65,11 @@ public interface CheckedIntUnaryOperator {
 
     /**
      * Returns an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return an {@link IntUnaryOperator} which delegates to the underlying {@link CheckedIntUnaryOperator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static IntUnaryOperator unchecked(final CheckedIntUnaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
@@ -79,7 +77,7 @@ public interface CheckedIntUnaryOperator {
             try {
                 return operator.applyAsInt(d);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }

@@ -15,8 +15,6 @@
  */
 package software.leonov.common.util.function;
 
-import static software.leonov.common.util.function.Exceptions.uncheckedException;
-
 import java.util.Objects;
 import java.util.function.LongBinaryOperator;
 
@@ -39,11 +37,11 @@ public interface CheckedLongBinaryOperator {
 
     /**
      * Returns a {@link LongBinaryOperator} which delegates to the underlying {@link CheckedLongBinaryOperator},
-     * {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked.
+     * {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked.
      * 
      * @param operator the underlying checked operator
      * @return a {@link LongBinaryOperator} which delegates to the underlying {@link CheckedLongBinaryOperator},
-     *         {@link Exceptions#uncheckedException(Exception) rethrowing} any checked exceptions as if they were unchecked
+     *         {@link Unchecked#exception(Exception) rethrowing} any checked exceptions as if they were unchecked
      */
     public static LongBinaryOperator unchecked(final CheckedLongBinaryOperator operator) {
         Objects.requireNonNull(operator, "operator == null");
@@ -51,7 +49,7 @@ public interface CheckedLongBinaryOperator {
             try {
                 return operator.applyAsLong(l, r);
             } catch (final Exception e) {
-                throw uncheckedException(e);
+                throw Unchecked.exception(e);
             }
         };
     }
