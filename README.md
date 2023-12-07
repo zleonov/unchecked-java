@@ -41,7 +41,7 @@ The latest API documentation can be accessed [here](https://zleonov.github.io/un
 
 WARNING
 =======
-Unchecked Java circumvents Java's exception handling mechanisms and can lead to horrible, often very hard to debug errors, when misused.
+Unchecked Java circumvents Java's exception handling mechanisms and can lead to horrible, often _very hard to debug_ errors, when misused.
 
 As Brian Goetz (Java Language Architect) put it:
 
