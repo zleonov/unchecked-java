@@ -219,7 +219,7 @@ public interface CheckedComparator<T> {
      * @return a composed comparator which uses {@code this} comparator first, and if the result is zero, applies the
      *         specified function before comparing the results according to their <i>natural ordering</i>
      */
-    default <U extends Comparable<? super U>> CheckedComparator<T> thenComparing(CheckedFunction<? super T, ? extends U> function) {
+    default <U extends Comparable<? super U>> CheckedComparator<T> thenComparing(final CheckedFunction<? super T, ? extends U> function) {
         return thenComparing(comparing(function));
     }
 
@@ -248,7 +248,7 @@ public interface CheckedComparator<T> {
      * @return a composed comparator which uses {@code this} comparator first, and if the result is zero, applies the
      *         specified function before comparing the {@code double} results according to their <i>natural ordering</i>
      */
-    default CheckedComparator<T> thenComparingDouble(CheckedToDoubleFunction<? super T> function) {
+    default CheckedComparator<T> thenComparingDouble(final CheckedToDoubleFunction<? super T> function) {
         return thenComparing(comparingDouble(function));
     }
 
